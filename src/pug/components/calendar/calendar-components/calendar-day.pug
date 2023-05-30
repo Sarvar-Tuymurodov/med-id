@@ -1,0 +1,30 @@
+table.custom-table.calendar-day__table
+    thead.calendar-day__thead
+        tr
+            th(scope='col', data-i18n='Resources.Calendar.Day.Event') События
+            th(scope='col', data-i18n='Resources.Calendar.Day.Client') Клиент
+            th(scope='col', data-i18n='Resources.Calendar.Day.Doctor') Доктор
+            th(scope='col', data-i18n='Resources.Calendar.Day.Comment') Описание
+    tbody#calendarDayTbody.calendar-day__tbody
+        tr
+            td
+                .calendar-day__actions
+                    span.medid-icon-continius
+                    span.medid-icon-active-notification
+                    span.medid-icon-urgent
+                    span.medid-icon-important
+            td
+                .calendar-day__client
+                    span.calendar-day__client--name Кристина Крупчатникова
+                    .calendar-day__client--phone 
+                        a(href='tel:+998998856545') +998 99 885 65 45
+                        a.call-to-client-btn(href='JavaScript:void(0)')
+                            span.medid-icon-PhoneNumber 
+            td
+                .calendar-day__doctor
+                    span.calendar-day__doctor--name Файзуллаев Ильхом
+                    .calendar-day__doctor--time 
+                        span 17:00 - 18:00
+            td
+                .calendar-day__comment
+                    span Разнообразный и богатый опыт говорит нам, что сложившаяся структура организации

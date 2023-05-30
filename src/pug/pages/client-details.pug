@@ -1,0 +1,486 @@
+extends ../clear.pug
+block headCssCustomStyle
+    link(rel='stylesheet', href='css/client-details.css', type='text/css')
+block mainContent
+    .client__container 
+        .client__header
+            .client__header--left
+                .client__logo 
+                    .client__logo-img
+                        img(src='img/client-img.png')
+                    .client__logo--gender
+
+                .client__info 
+                    .client__name Кристина Крупчатникова
+                    .client__phone
+                        .client__phone--number
+                            span.medid-icon-favourite
+                            a(href='teL:+998 90 127 05 00') +998 90 127 05 00
+                        .client__phone--btn 
+                            span.medid-icon-phone-number
+                    .client__birthday 
+                        .client__birthday--date 24.01.1984 г
+
+                        .client__age 32
+                        .client__birthday--is
+                            span.medid-icon-birthday
+                    .client__tags 
+                        p 
+                            span 
+                            | Обычный тег
+                        p 
+                            span 
+                            | Другой тег
+                        p 
+                            span 
+                            | Аллергия
+                        p 
+                            span 
+                            | Страховая компания
+
+            .client__header--right
+                .client__header--bill 
+                    .client__header--bill-text -230 000 сум
+                    .client__header--bill-date на 30.07.2022
+                    button.client__header--bill-button.btn-default
+                        span.medid-icon-add
+
+                .client__header--right-mid
+                    button.btn-default 
+                        span.medid-icon-add-note
+                        | Добавить запись
+                    button.btn-default 
+                        span.medid-icon-add-user
+                        | Осмотр
+                    button.btn-default 
+                        span.medid-icon-add-file
+                        | Добавить Файл
+                .client__header--right-end
+                    button.btn-default 
+                        span.medid-icon-add-receipt
+                        | Выписать рецепт
+                    button.btn-default Печать
+
+        .client__body
+            .client__body--tab.tab-list
+                a.active(data-tab='clientMainData') Основные данные
+                a(data-tab='clientDentaData') Стоматология
+
+            .client__tab--content.tab-content
+                #clientMainData.active.tab-pane.client__main--data 
+                    ul.client__main--tab-list.tab-list.tab-links-parent
+                        li.client__main--tab-link.tab-link.active(
+                            data-tab='clientMainForm'
+                        ) О пациенте
+                        li.client__main--tab-link.tab-link(
+                            data-tab='clientMainAdditionals'
+                        ) Дополнительно
+                        //- li.client__main--tab-link.tab-link(
+                        //-     data-tab='clientMainPay'
+                        //- ) Оплаты
+                        //- li.client__main--tab-link.tab-link(
+                        //-     data-tab='clientMainRecipes'
+                        //- ) Рецепты
+
+                    .tab-content 
+                        #clientMainForm.tab-pane.active
+                            .client__main--form
+                                form(action='')
+                                    .client__form--col-1
+                                        .form-group 
+                                            input.form-input(type='text')
+                                            label.form-label(for='') Фамилия
+                                            .form-border
+
+                                        .form-group 
+                                            input.form-input(type='text')
+                                            label.form-label(for='') Имя
+
+                                        .form-group 
+                                            input.form-input(type='text')
+                                            label.form-label(for='') Отчество
+
+                                        .form-group 
+                                            input.form-input(type='text')
+                                            label.form-label(for='') Дата Рождения
+
+                                    .client__form--col-2
+                                        .form-group 
+                                            select.form-input(type='text')
+                                                option(value='') Мужской
+                                                option(value='') Жен
+                                            label.form-label(for='') Дата Рождения
+
+                                        .client__form--phone.form-add-smt 
+                                            .client__form--phone-group 
+                                                input#clientFormPhoneInput.form-input
+
+                                                button.btn-blue
+                                                    span.medid-icon-add
+
+                                    .client__form--col-3
+                                        .client__form--illness.form-add-smt 
+                                            .client__form--phone-group 
+                                                input#clientFormIllnessInput.form-input
+
+                                                button.btn-blue
+                                                    span.medid-icon-add
+                                    .client__form--col-4 
+                                        .client__form--Contraindications.form-add-smt 
+                                            .client__form--phone-group 
+                                                input#clientFormContraindicationsInput.form-input
+
+                                                button.btn-blue
+                                                    span.medid-icon-add
+
+                        #clientMainAdditionals.tab-pane
+                            .client__question
+                                .client__status
+                                    .client__status-switcher 
+                                        input#checkboxBlacklist.switch-input(
+                                            type='checkbox'
+                                        )
+                                        label.switch(for='checkboxBlacklist')
+                                        .client__status--text
+                                            h3 В черный список
+                                            p Добавьте в черный список сомнительных или клиентов часто пропускающих процедуры
+                                    .client__status-switcher 
+                                        input#checkboxNotification.switch-input(
+                                            type='checkbox'
+                                        )
+                                        label.switch(
+                                            for='checkboxNotification'
+                                        )
+                                        .client__status--text
+                                            h3 В черный список
+                                            p Добавьте в черный список сомнительных или клиентов часто пропускающих процедуры
+                                    .client__status-switcher 
+                                        input#checkboxNotificateEvents.switch-input(
+                                            type='checkbox'
+                                        )
+                                        label.switch(
+                                            for='checkboxNotificateEvents'
+                                        )
+                                        .client__status--text
+                                            h3 В черный список
+                                            p Добавьте в черный список сомнительных или клиентов часто пропускающих процедуры
+
+                                .client__add--tag.form-add-smt 
+                                    .client__form--tag-group 
+                                        input#clientFormTagInput.form-input
+
+                                        button.btn-blue
+                                            span.medid-icon-add
+
+                            .client__quiz 
+                                .client__quiz--left
+                                    h4.client__quiz--title Ответьте на вопросы:
+                                    .client__quiz--test 
+                                        h4.client__quiz--test-question 
+                                            | Проводились ли исследование на ВИЧ/СПИД
+                                        .client__quiz--form-group
+                                            input#answer1-1(
+                                                type='radio',
+                                                name='question1'
+                                            )
+                                            label(for='answer1-1') Проводились: положительный
+                                        .client__quiz--form-group
+                                            input#answer1-2(
+                                                type='radio',
+                                                name='question1'
+                                            )
+                                            label(for='answer1-2') Проводились: отрицательный
+                                        .client__quiz--form-group
+                                            input#answer1-3(
+                                                type='radio',
+                                                name='question1'
+                                            )
+                                            label(for='answer1-3') Не проводилось
+
+                                    .client__quiz--test 
+                                        h4.client__quiz--test-question 
+                                            | Проводились ли исследование на ВИЧ/СПИД
+                                        .client__quiz--form-group
+                                            input#answer2-1(
+                                                type='radio',
+                                                name='question2'
+                                            )
+                                            label(for='answer2-1') Проводились: положительный
+                                        .client__quiz--form-group
+                                            input#answer2-2(
+                                                type='radio',
+                                                name='question2'
+                                            )
+                                            label(for='answer2-2') Проводились: отрицательный
+                                        .client__quiz--form-group
+                                            input#answer2-3(
+                                                type='radio',
+                                                name='question2'
+                                            )
+                                            label(for='answer2-3') Не проводилось
+
+                                    .client__quiz--test 
+                                        h4.client__quiz--test-question 
+                                            | Проводились ли исследование на ВИЧ/СПИД
+
+                                        .client__quiz--test-inline
+                                            .client__quiz--form-group
+                                                input#answer3-1(
+                                                    type='radio',
+                                                    name='question3'
+                                                )
+                                                label(for='answer3-1') Да
+                                            .client__quiz--form-group
+                                                input#answer3-2(
+                                                    type='radio',
+                                                    name='question3'
+                                                )
+                                                label(for='answer3-2') Не
+
+                                    .client__quiz--test
+                                        h4.client__quiz--test-question 
+                                            | Проводились ли исследование на ВИЧ/СПИД
+
+                                        .client__quiz--test-inline
+                                            .client__quiz--form-group
+                                                input#answer4-1(
+                                                    type='radio',
+                                                    name='question4'
+                                                )
+                                                label(for='answer4-1') Да
+                                            .client__quiz--form-group
+                                                input#answer4-2(
+                                                    type='radio',
+                                                    name='question4'
+                                                )
+                                                label(for='answer4-2') Нет
+
+                                    .client__quiz--test 
+                                        h4.client__quiz--test-question 
+                                            | Проводились ли исследование на ВИЧ/СПИД
+
+                                        .client__quiz--test-inline
+                                            .client__quiz--form-group
+                                                input#answer5-1(
+                                                    type='radio',
+                                                    name='question5'
+                                                )
+                                                label(for='answer5-1') Да
+                                            .client__quiz--form-group
+                                                input#answer5-2(
+                                                    type='radio',
+                                                    name='question5'
+                                                )
+                                                label(for='answer5-2') Нет
+
+                                .client__quiz--right
+                                    h4.client__quiz--title Ответьте на вопросы:
+
+                                    .client__quiz--test 
+                                        h4.client__quiz--test-question 
+                                            | Проводились ли исследование на ВИЧ/СПИД
+
+                                        .client__quiz--test-inline
+                                            .client__quiz--form-group
+                                                input#answer6-1(
+                                                    type='radio',
+                                                    name='question6'
+                                                )
+                                                label(for='answer6-1') Да
+                                            .client__quiz--form-group
+                                                input#answer6-2(
+                                                    type='radio',
+                                                    name='question6'
+                                                )
+                                                label(for='answer6-2') Не
+
+                                    .client__quiz--test
+                                        h4.client__quiz--test-question 
+                                            | Проводились ли исследование на ВИЧ/СПИД
+
+                                        .client__quiz--test-inline
+                                            .client__quiz--form-group
+                                                input#answer7-1(
+                                                    type='radio',
+                                                    name='question7'
+                                                )
+                                                label(for='answer7-1') Да
+                                            .client__quiz--form-group
+                                                input#answer7-2(
+                                                    type='radio',
+                                                    name='question7'
+                                                )
+                                                label(for='answer7-2') Нет
+
+                                    .client__quiz--test 
+                                        h4.client__quiz--test-question 
+                                            | Проводились ли исследование на ВИЧ/СПИД
+
+                                        .client__quiz--test-inline
+                                            .client__quiz--form-group
+                                                input#answer8-1(
+                                                    type='radio',
+                                                    name='question8'
+                                                )
+                                                label(for='answer8-1') Да
+                                            .client__quiz--form-group
+                                                input#answer8-2(
+                                                    type='radio',
+                                                    name='question8'
+                                                )
+                                                label(for='answer8-2') Нет
+                            .client__question--save 
+                                button.btn-blue Сохранить
+
+                        //- #clientMainPay.tab-pane
+                        //- #clientMainRecipes.tab-pane
+                #clientDentaData.tab-pane.client__denta--data
+                    ul.denta__tab-list.tab-list.tab-links-parent
+                        li.denta__tab-link.tab-link.active(
+                            data-tab='dentaTreatment'
+                        ) Лечение
+                        li.denta__tab-link.tab-link(data-tab='dentaFiles') Файлы
+
+                    .tab-content 
+                        #dentaTreatment.tab-pane.active
+                            .denta-treatment 
+                                .denta-treatment__action-btns
+                                    button.denta-treatment__first.btn-bordered 
+                                        span.medid-icon-add-user
+                                        | Первичный осмотр
+                                    button.denta-treatment__add.btn-bordered
+                                        span.medid-icon-add-heal
+                                        | Добавить лечение
+                                    button.denta-treatment__tooth.btn-bordered Лечение полости рта
+                                    .denta-treatment__child-card 
+                                        input#checkBoxChildCard.switch-input(
+                                            type='checkbox'
+                                        )
+                                        label.switch(for='checkBoxChildCard')
+                                        h4 Детская карта
+                                .denta-treatment__teeth-structure 
+                                    .denta-treatment__detailed-view 
+                                        input#detailedViewTeeth(
+                                            type='checkbox'
+                                        )
+                                        label(for='detailedViewTeeth') Детальный просмотр
+                                    .denta-treatment__teeth-list.teeth-table 
+                                        .denta-treatment__teeth-top 
+                                            .denta-treatment__teeth-top--left
+                                                h4.denta-treatment__teeth-top--left-title LT
+                                                .teeth-table__group
+                                                    .teeth-table__content
+                                                        span 8
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 7
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 6
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 5
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 4
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 3
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 2
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 1
+                                                        .teeth-table__item
+                                            .denta-treatment__teeth-top--right
+                                                h4.denta-treatment__teeth-top--right-title RT
+                                                .teeth-table__group 
+                                                    .teeth-table__content
+                                                        span 1
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 2
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 3
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 4
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 5
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 6
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 7
+                                                        .teeth-table__item
+                                                    .teeth-table__content
+                                                        span 8
+                                                        .teeth-table__item
+                                        .denta-treatment__teeth-bottom 
+                                            .denta-treatment__teeth-bottom--left
+                                                .teeth-table__group 
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 8
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 7
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 6
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 5
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 4
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 3
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 2
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 1
+                                                h4.denta-treatment__teeth-bottom--left-title LB
+
+                                            .denta-treatment__teeth-bottom--right
+                                                .teeth-table__group 
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 1
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 2
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 3
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 4
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 5
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 6
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 7
+                                                    .teeth-table__content
+                                                        .teeth-table__item
+                                                        span 8
+                                                h4.denta-treatment__teeth-bottom--right-title RB
+
+                        #dentaFiles.tab-pane
+                            .denta-file
+                                .denta-file__gallery
+                                .denta-file__add 
+
+block endJsCustomScript
+    script(src='js/client-details.js', type='module') 

@@ -1,0 +1,142 @@
+:root {
+    --color-lang-main-background: #f5f7f9;
+    --color-lang-current-lang-text: #4362ee;
+    --color-lang-change: #ececec;
+    --color-lang-change-icon: #3c4258;
+    --color-lang-main-background-hover: #eaedf1;
+    --color-lang-change-background-hover: #cecece;
+    --color-lang-list-background: #fff;
+    --color-lang-list-lang-short-name: #ef4d3c;
+}
+
+.nav-lang {
+    width: 78px;
+    height: 34px;
+    min-width: 78px;
+    min-height: 34px;
+    max-width: 78px;
+    max-height: 34px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--color-lang-main-background);
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    cursor: pointer;
+    justify-content: right;
+
+    & .current-lang__text {
+        font-family: LatoWebBlack;
+        font-size: 18px;
+        padding: 6px 8px 4px;
+        -moz-border-radius: 10px 0px 0px 10px;
+        font-family: LatoWebBlack;
+        color: var(--color-lang-current-lang-text);
+        text-transform: uppercase;
+    }
+
+    & .lang-change {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        min-height: 34px;
+        max-width: 34px;
+        max-height: 34px;
+        background: var(--color-lang-change);
+        border-radius: 0 10px 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    & .lang-change svg path {
+        stroke: var(--color-lang-change-icon);
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    &:hover {
+        background: var(--color-lang-main-background-hover);
+        transition: all 0.3s ease-out;
+
+        & .lang-change {
+            background: var(--color-lang-change-background-hover);
+            transition: all 0.3s ease-out;
+        }
+    }
+}
+
+.nav-lang .lang-list {
+}
+
+.nav-lang.active .lang-list {
+    display: flex !important;
+}
+
+.lang-list {
+    background: var(--color-lang-list-background);
+    border-radius: 10px;
+    transition: all 0.3s ease-out;
+    position: absolute;
+    flex-direction: column;
+    z-index: 100;
+    font-family: LatoWebBold;
+    font-size: 18px;
+    top: 80px;
+    min-width: 240px;
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.08));
+    right: 10px;
+    opacity: 0;
+
+    &.active {
+        display: flex;
+        opacity: 1;
+        transition: all 0.3s ease-out;
+    }
+
+    & .lang-item {
+        padding: 10px 20px 10px 20px;
+        cursor: pointer;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none;
+        &:first-child {
+            border-radius: 10px 10px 0 0 !important;
+        }
+        &:last-child {
+            border-radius: 0 0 10px 10px !important;
+        }
+        & .lang-short-name {
+            color: var(--color-lang-list-lang-short-name);
+            text-transform: uppercase;
+        }
+        & .lang-full-name {
+            padding-left: 10px;
+        }
+        &:hover {
+            background: var(--color-lang-main-background);
+        }
+        &.selected:after {
+            position: absolute;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNCAyNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDIyLjVDMTcuNSAyMi41IDIyIDE4IDIyIDEyLjVDMjIgNyAxNy41IDIuNSAxMiAyLjVDNi41IDIuNSAyIDcgMiAxMi41QzIgMTggNi41IDIyLjUgMTIgMjIuNVoiIHN0cm9rZT0iIzVFOTBFRCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNNy43NSAxMi40OTk5TDEwLjU4IDE1LjMyOTlMMTYuMjUgOS42Njk5MiIgc3Ryb2tlPSIjNUU5MEVEIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=');
+            right: 20px;
+            content: '';
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .nav-lang {
+        display: none;
+    }
+}

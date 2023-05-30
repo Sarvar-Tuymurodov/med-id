@@ -1,0 +1,46 @@
+$switch-thumb: $color-white;
+$switch-bg-active: $color-primary-500;
+$switch-size: 100px;
+
+.switch-input {
+    display: none;
+}
+
+.switch {
+    display: block;
+    box-sizing: border-box;
+    width: 60px;
+    height: 30px;
+    border: none;
+    border-radius: 30px;
+    background-color: $color-background-light;
+    cursor: pointer;
+    transition: 300ms 100ms;
+    border: 3px solid $color-background-light;
+
+    position: relative;
+}
+.switch::before {
+    content: '';
+    background-color: $color-white;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: 300ms, width 600ms;
+}
+.switch-input:checked + .switch {
+    background-color: $color-primary-500;
+    border-color: $color-primary-500;
+}
+.switch:active::before {
+    width: 80%;
+}
+.switch-input:checked + .switch::before {
+    left: 100%;
+    transform: translateX(-100%);
+}

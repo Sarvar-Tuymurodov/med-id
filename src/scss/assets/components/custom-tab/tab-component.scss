@@ -1,0 +1,8 @@
+.tab-pane {
+    width: 100%;
+    display: none;
+
+    &.active {
+        display: inline-block;
+    }
+}

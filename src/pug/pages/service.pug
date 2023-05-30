@@ -1,0 +1,58 @@
+extends ../clear.pug
+block headCssCustomStyle
+    link(rel='stylesheet', href='css/service.css', type='text/css')
+
+block mainContent
+    .service__container.container
+        .service__header 
+            ul.service__header--tab-list.tab-list.tab-links-parent
+                li.service__header--tab-link.tab-link.active(
+                    data-tab='serviceDenta'
+                ) Стоматология
+                //- li.service__header--tab-link.tab-link(
+                //-     data-tab='doctorAdditionals'
+                //- ) Хирургия
+                //- li.service__header--tab-link.tab-link(
+                //-     data-tab='doctorSchedule'
+                //- ) Окулист
+                //- li.service__header--tab-link.tab-link(
+                //-     data-tab='doctorSchedule'
+                //- ) Окулист
+
+        .tab-content 
+            #serviceDentatab-pane.active 
+                .service__body 
+                    .service__category
+                        .service__category--head
+                            h3.service__category--title Категории
+                            button.service__category--add.btn-blue 
+                                span.medid-icon-add
+                        .service__category--body 
+                            .service__category--box.active 
+                                .service__category--name Диагностика
+                                .service__category--count 22
+                            .service__category--box 
+                                .service__category--name Диагностика
+                                .service__category--count 22
+                            .service__category--box 
+                                .service__category--name Диагностика
+                                .service__category--count 22
+                            .service__category--box 
+                                .service__category--name Диагностика
+                                .service__category--count 22
+                    .service__list 
+                        table#serviceListTable.custom-table
+                            thead 
+                                tr 
+                                    th Наименование
+                                    th Время
+                                    th Стоимость
+                                    th 
+                            tbody 
+
+block modalHtml
+    include ../components/modals/add-service.pug
+
+block endJsCustomScript
+    script(src='../plugins/datatable/jquery.dataTables.min.js')
+    script(src='../js/service.js', type='module')

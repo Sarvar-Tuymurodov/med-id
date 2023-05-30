@@ -1,0 +1,134 @@
+#addEventModal.modal.add-event-modal
+    .modal__content 
+        .modal__header
+            h2.modal__title Add event
+            .modal__actions
+                button#addEventIsImportant.btn-default.add-event__important
+                    span.medid-icon-important
+                button#addEventIsFlash.btn-default.add-event__flash
+                    span.medid-icon-urgent
+                button#addEventIsNotify.btn-default.add-event__notify
+                    span.medid-icon-active-notification
+                button#addEventIsContinius.btn-default.add-event__continius
+                    span.medid-icon-continius
+                button#addEventIsRepeat.btn-default.add-event__repeat
+                    span.medid-icon-repeatable
+            .modal__form-btns
+                button.btn-blue.add-event__save Сохранить
+                button.btn-close.modal__close(href='JavaScript:void(0)')
+                    span.medid-icon-add
+
+        .modal__body 
+            .modal__body--left
+                .add-event__date.form-group
+                    input#addEventDate.form-input(
+                        required='',
+                        type='text',
+                        autocomplete='off'
+                    )
+                    label.form-label(data-i18n='Resources.AddEvent.Date') Дата
+                    .form-border.error-surname
+
+                .add-event__type-event.form-group
+                    select#addEventYtpe.form-input(
+                        required='',
+                        autocomplete='off'
+                    )
+                    label.form-label.form-select-label(
+                        data-i18n='Resources.AddEvent.EventType'
+                    ) Hodisa turi
+                    .form-border.error-surname
+
+                .add-event__part
+                    h3 Стоматология Tabassum
+                    button#addEventDoctorBtn.add-event__doctor-btn.btn-blue
+                        span.medid-icon-user
+                        p(data-i18n='Resources.AddEvent.AddDoctor') Добавить врача
+                    .add-event__doctor-form
+                        .add-event__doctor.form-group
+                            select#addEventDoctor.form-input(
+                                required='',
+                                autocomplete='off'
+                            )
+                            label.form-label.form-select-label(
+                                data-i18n='Resources.AddEvent.Pacient'
+                            ) Hodisa turi
+                            .form-border.error-surname
+
+                    button#addEventPacientBtn.add-event__pacient-btn.btn-blue
+                        span.medid-icon-add-doctor
+                        p(data-i18n='Resources.AddEvent.AddPacient')
+                    .add-event__pacient-form
+                        form.add-event__pacient-radio
+                            .add-event__pacient-radio--left
+                                input#addEventPacientIsNew(
+                                    type='radio',
+                                    name='newOrOldClient',
+                                    checked
+                                )
+                                label(for='addEventPacientIsNew') Pacient
+                            .add-event__pacient-radio--right
+                                input#addEventPacientIsOld(
+                                    type='radio',
+                                    name='newOrOldClient'
+                                )
+                                label(for='addEventPacientIsOld') New Pacient
+
+                        .add-event__pacient.form-group
+                            select#addEventPacient.form-input(
+                                required='',
+                                autocomplete='off'
+                            )
+                            label.form-label.form-select-label(
+                                data-i18n='Resources.AddEvent.Doctor'
+                            ) Hodisa turi
+                            .form-border.error-surname
+
+                        .add-event__phone.form-group
+                            input#addEventPhone.form-input(
+                                required='',
+                                autocomplete='off'
+                            )
+                            label.form-label(
+                                data-i18n='Resources.Global.Clients.Form.EventType'
+                            ) Hodisa turi
+                            .form-border.error-surname
+
+            .modal__body--right
+                .add-event__time 
+                    .add-event__time-start.form-group
+                        input#addEventTimeFrom.form-input.cm-timepicker(
+                            data-element-type='c-timepicker',
+                            required='',
+                            type='text',
+                            autocomplete='off'
+                        )
+                        label.form-label(
+                            data-i18n='Resources.Global.Calendar.Modal.Date'
+                        ) с
+                        .form-border.error-surname
+
+                    .add-event__time-end.form-group
+                        input#addEventTimeTo.form-input.cm-timepicker(
+                            data-element-type='c-timepicker',
+                            required='',
+                            type='text',
+                            autocomplete='off'
+                        )
+                        label.form-label(
+                            data-i18n='Resources.Global.Calendar.Modal.Date'
+                        ) до
+                        .form-border.error-surname
+
+                .add-event__comment.form-group 
+                    textarea.form-input(
+                        required='',
+                        type='text',
+                        autocomplete='off'
+                    )
+                    label.form-label(
+                        data-i18n='Resources.Global.Calendar.Modal.Date'
+                    ) до
+                    .form-border.error-surname
+
+        .modal__footer

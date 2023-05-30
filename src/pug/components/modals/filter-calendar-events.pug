@@ -1,0 +1,54 @@
+#filterCalendarEvents.modal.filter-events-modal
+    .modal__content 
+        .modal__header 
+            h2.modal__title Filter events
+            button.btn-close.modal__close(href='JavaScript:void(0)') 
+                span.medid-icon-add
+
+        .modal__body
+            .filter-event__by-pacient.form-group
+                select#filterEventByPacient.form-input(
+                    required='',
+                    autocomplete='off'
+                )
+                label.form-label.form-select-label(
+                    data-i18n='Resources.Global.Clients.Form.EventType'
+                ) Пациент
+                .form-border.error-surname
+
+            .filter-event__by-doctor.form-group
+                select#filterEventByDoctor.form-input(
+                    required='',
+                    autocomplete='off'
+                )
+                label.form-label.form-select-label(
+                    data-i18n='Resources.Global.Clients.Form.EventType'
+                ) Лечащий врач
+                .form-border.error-surname
+
+            .filter-event__by-time.form-group
+                input#filterEventByTime.form-input(
+                    required='',
+                    autocomplete='off'
+                )
+                label.form-label(
+                    data-i18n='Resources.Global.Clients.Form.EventType'
+                ) Временный интервал
+                .form-border.error-surname
+
+            .filter-event__by-actions
+                h3 События
+                .filter-event__by-actions-group
+                    button#filterEventIsImportant.btn-default.filter-event__important 
+                        span.medid-icon-important
+                    button#filterEventIsFlash.btn-default.filter-event__flash 
+                        span.medid-icon-urgent
+                    button#filterEventIsNotify.btn-default.filter-event__notify
+                        span.medid-icon-active-notification
+                    button#filterEventIsContinius.btn-default.filter-event__continius
+                        span.medid-icon-continius
+                    button#filterEventIsRepeat.btn-default.filter-event__repeat
+                        span.medid-icon-repeatable
+
+        .modal__footer
+            button#applyFilterForm.btn-blue.filter-event__confirm.modal-save Применить

@@ -1,0 +1,9 @@
+@import '../calendar/calendar.scss';
+@import '../client/client.scss';
+@import '../components/modal/modal-component.scss';
+@import '../components/modal/add-event.scss';
+
+.main-page__container {
+    display: flex;
+    padding: 30px 40px;
+}

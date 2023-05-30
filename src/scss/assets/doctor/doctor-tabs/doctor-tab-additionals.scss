@@ -1,0 +1,27 @@
+.doctor {
+    &__additional {
+        display: flex;
+        margin: 0 -10px;
+    }
+
+    &__about-comment,
+    &__specialization,
+    &__education,
+    &__achievments {
+        flex: 1 1 calc(25% - 20px);
+        margin: 0 10px;
+    }
+
+    &__about-comment {
+        display: flex;
+        flex-direction: column;
+
+        & textarea {
+            width: 100%;
+            background-color: $color-background-light;
+            border-radius: $default-border-radius;
+            border: none;
+            height: 100%;
+        }
+    }
+}

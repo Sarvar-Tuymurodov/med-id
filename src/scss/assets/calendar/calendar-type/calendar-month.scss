@@ -1,0 +1,251 @@
+.calendar-block {
+    &__month {
+        width: 100%;
+        display: none;
+
+        &.active {
+            display: inline-block;
+        }
+    }
+
+    .calendar-month {
+        &__table {
+            width: 100%;
+        }
+
+        &__thead {
+            border-radius: 10px;
+
+            & tr {
+                display: flex;
+                width: 100%;
+                border-radius: 10px;
+                overflow: hidden;
+
+                & th {
+                    display: flex;
+                    justify-content: center;
+                    flex-grow: 1;
+                    padding: 15px 0;
+                }
+            }
+        }
+
+        &__tbody {
+            & tr {
+                display: grid;
+                width: 100%;
+                grid-template-columns: repeat(7, 1fr);
+
+                &:first-child {
+                    margin-top: -5px;
+                }
+
+                & td {
+                    font-family: 'LatoWebBold';
+                    background-color: $color-white;
+                    height: 130px;
+                    // max-width: 140px;
+                    margin: 4px;
+                    box-shadow: $default-box-shadow;
+                    border-radius: 10px;
+                    font-size: 32px;
+                    transition: all 0.2s;
+                    position: relative;
+                    outline: 2px solid transparent;
+                    cursor: pointer;
+
+                    display: flex;
+                    flex-grow: 1;
+                    align-items: center;
+                    justify-content: center;
+                    user-select: none;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    &:nth-child(7n) {
+                        & .calendar-month__day.passed {
+                            & .calendar-month__date {
+                                color: $color-red-300;
+                            }
+                        }
+
+                        &:hover {
+                            & .calendar-month__day.passed {
+                                & .calendar-month__date {
+                                    color: $color-red;
+                                }
+                            }
+                        }
+
+                        .calendar-month__date {
+                            color: $color-red;
+                        }
+                    }
+
+                    &:hover {
+                        outline: 2px solid $color-blue-2;
+
+                        & .calendar-month__day--bottom {
+                            background-color: $color-primary-50;
+                        }
+
+                        & .calendar-month__events-count,
+                        & .calendar-month__events-text {
+                            color: $color-primary-500;
+                        }
+                    }
+
+                    &:active {
+                    }
+                }
+            }
+        }
+
+        &__day {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+
+            &.passed {
+                & .calendar-month__date {
+                    color: $color-black-400;
+                }
+
+                & .medid-icon-continius,
+                & .medid-icon-active-notification,
+                & .medid-icon-urgent,
+                & .medid-icon-Important {
+                    color: $color-black-400;
+                }
+
+                & .calendar-month__day--bottom {
+                    background-color: $color-background-light;
+                }
+
+                & .calendar-month__day--bottom span {
+                    color: $color-black-400;
+                }
+
+                &:hover {
+                    & .calendar-month__date {
+                        color: $color-clay-3;
+                    }
+
+                    & .medid-icon-continius,
+                    & .medid-icon-active-notification,
+                    & .medid-icon-urgent,
+                    & .medid-icon-Important {
+                        color: $color-clay-3;
+                    }
+                }
+            }
+
+            &.is-today {
+                & .calendar-month__date {
+                    color: $color-white !important;
+                    background-color: $color-primary-500;
+                    border-radius: 50%;
+                }
+            }
+
+            &.prev-month {
+                & .calendar-month__date {
+                    opacity: 0.3;
+                }
+            }
+
+            &--top {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+
+                width: 100%;
+                max-height: 85px;
+                height: 100%;
+            }
+
+            &--bottom {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 30px;
+                background-color: $color-background-light;
+                padding: 3px 5px;
+                border-radius: 0 0 10px 10px;
+
+                &.hide {
+                    display: none;
+                }
+            }
+
+            & .medid-icon-continius {
+                color: $color-dark-green;
+            }
+            & .medid-icon-urgent {
+                color: $color-yellow-500;
+            }
+            & .medid-icon-active-notification {
+                color: $color-blue;
+            }
+            & .medid-icon-Important {
+                color: $color-red;
+            }
+        }
+
+        &__date {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__actions {
+            display: flex;
+            justify-content: space-around;
+
+            & span {
+                display: none;
+                font-size: 22px;
+
+                &.active {
+                    display: inline-block;
+                }
+            }
+        }
+
+        &__events {
+            &-count {
+                font-size: 16px;
+                font-family: 'LatoWebBold';
+                margin-right: 5px;
+                transition: all 0.2s;
+            }
+
+            &-text {
+                font-size: 16px;
+                font-family: 'LatoWebBold';
+                transition: all 0.2s;
+            }
+        }
+    }
+}

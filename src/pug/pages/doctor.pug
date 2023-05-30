@@ -1,0 +1,18 @@
+extends ../clear.pug
+block headCssCustomStyle
+    link(rel='stylesheet', href='css/doctor.css', type='text/css')
+block mainContent
+    .doctor__container.container 
+        .doctor__content 
+            table.custom-table#doctorsTable.doctor__table
+                thead 
+                    tr 
+                        th 
+                        th Сотрудник
+                        th Специальность
+                        th График
+                        th 
+
+block endJsCustomScript
+    script(src='../plugins/datatable/jquery.dataTables.min.js')
+    script(src='js/doctor.js', type='module') 

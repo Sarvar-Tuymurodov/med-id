@@ -1,0 +1,364 @@
+extends ../clear.pug
+block headCssCustomStyle
+    link(
+        rel='stylesheet',
+        href='css/doctor-details.css?version=1',
+        type='text/css'
+    )
+
+block mainContent
+    .doctor__container.container 
+        .doctor__header
+            ul.doctor__header--tab-list.tab-list.tab-links-parent
+                li.doctor__header--tab-link.tab-link.active(
+                    data-tab='doctorMainData'
+                ) Основные
+                li.doctor__header--tab-link.tab-link(
+                    data-tab='doctorAdditionals'
+                ) Доп инфо
+                li.doctor__header--tab-link.tab-link(data-tab='doctorSchedule') График
+
+            .doctor__header--save-or-cancel 
+                button.btn-bordered.doctor__form--cancel Отмена
+                button.btn-blue.doctor__form--save Сохранить
+        .doctor__body
+            .tab-content 
+                #doctorMainData.tab-pane.active
+                    .doctor__content 
+                        .doctor__content--left 
+                            .doctor__content--info
+                                .doctor__content--info-img 
+                                    img(
+                                        src='../img/doctor-data-table-large.png',
+                                        alt=''
+                                    ) 
+                                .doctor__content--load-img 
+                                    .doctor__content--activate-doctor
+                                        .doctor__content--activate-group
+                                            label.doctor__content--activate-label(
+                                                for='activateDoctor'
+                                            ) Код подключения врача
+                                            .doctor__content--activate-input
+                                                input#activateDoctor(
+                                                    type='text'
+                                                )
+                                                button Загрузить
+                                        button.doctor__content--activate-qr 
+                                            span.medid-icon-qr
+                                    .doctor__content--status-switcher 
+                                        p Принимает записи
+                                        input#switchDoctorStatus.switch-input(
+                                            type='checkbox'
+                                        )
+                                        label.switch(for='switchDoctorStatus')
+                                .doctor__content--status 
+                                    .doctor__content--status-select 
+                                        label(for='doctorIsWoring') Статус
+                                        select#doctorIsWoring(
+                                            name='doctorIsWoring'
+                                        ) 
+                                            option(value='Работает') Работает
+                                            option(value='Работает') Работает
+                                    .doctor__content--lock 
+                                        button
+                                            span.medid-icon-block 
+                                            | Заблокировать пользователя
+                            form.doctor__content--form 
+                                .doctor__content--form-col
+                                    .form-group 
+                                        input.form-input(type='text')
+                                        label.form-label(for='') Фамилия
+                                        .form-border
+                                    .form-group 
+                                        input.form-input(type='text')
+                                        label.form-label(for='') Имя
+                                        .form-border
+                                    .form-group 
+                                        input.form-input(type='text')
+                                        label.form-label(for='') Отчество
+                                        .form-border
+                                .doctor__content--form-col 
+                                    .form-group 
+                                        input.form-input(type='text')
+                                        label.form-label(for='') Дата Рождения
+                                        .form-border
+                                    .form-group 
+                                        input.form-input(type='text')
+                                        label.form-label(for='') Специальность
+                                        .form-border
+                                    .form-group 
+                                        input.form-input(type='text')
+                                        label.form-label(for='') Пол
+                                        .form-border
+                                .doctor__content--form-col
+                                    button.doctor__content--add__another-adress
+                                        span.medid-icon-add
+                                        | Другие способы связи
+                                    label(for='doctorFormPhoneInput') Способы связи
+                                    .doctor__content--form-phone.form-add-smt 
+                                        .doctor__content--form-phone
+                                            input#doctorFormPhoneInput.form-input
+                                            button.btn-blue
+                                                span.medid-icon-add
+
+                        .doctor__content--right 
+                            .doctor__content--balance
+                                ul.tab-list.doctor__content--links 
+                                    li.tab-link.doctor__content--link.active(
+                                        data-tab='doctorBalanceBody'
+                                    ) Баланс
+                                    li.tab-link.doctor__content--link(
+                                        data-tab='doctorBalanceDevices'
+                                    ) Устройства
+
+                                .tab-content.doctor__content--body 
+                                    #doctorBalanceBody.tab-pane.active 
+                                        .doctor__balance
+                                            .doctor__balance--status 
+                                                .doctor__balance--status-left
+                                                    .doctor__balance--status-title Статус
+                                                    .doctor__balance--status-name Оплачено
+                                                    .doctor__balance--status-date до 29.08.2022
+
+                                                .doctor__balance--status-right
+                                                    .doctor__balance--status-bill Баланс
+                                                    .doctor__balance--status-price 78 000
+                                                    .doctor__balance--status-currency сум
+
+                                            .doctor__balance--bill 
+                                                .doctor__balance--bill-top
+                                                    p.doctor__balance--title Зачисление:
+                                                    .doctor__balance--bill-date 29.08.2022
+
+                                                .doctor__balance--bill-bottom
+                                                    .doctor__balance--bill-price 
+                                                        span +120 000
+                                                        | сум
+                                                    .doctor__balance--bill-time 11:52
+                                            .doctor__balance--bill 
+                                                .doctor__balance--bill-top
+                                                    p.doctor__balance--title Зачисление:
+                                                    .doctor__balance--bill-date 29.08.2022
+
+                                                .doctor__balance--bill-bottom
+                                                    .doctor__balance--bill-price 
+                                                        span +120 000
+                                                        | сум
+                                                    .doctor__balance--bill-time 11:52
+                                            .doctor__balance--bill 
+                                                .doctor__balance--bill-top
+                                                    p.doctor__balance--title Зачисление:
+                                                    .doctor__balance--bill-date 29.08.2022
+
+                                                .doctor__balance--bill-bottom
+                                                    .doctor__balance--bill-price 
+                                                        span +120 000
+                                                        | сум
+                                                    .doctor__balance--bill-time 11:52
+
+                                    #doctorBalanceDevices.tab-pane
+                                        .doctor__devices
+                                            .doctor__devices--box
+                                                .doctor__devices--box-img
+                                                .doctor__devices--box-info
+                                                    .doctor__devices--box-browser Chrome
+                                                    .doctor__devices--box-desktop Dell alienware
+                                                    .doctor__devices--box-date Uzbekistan 19:55
+                                            .doctor__devices--box
+                                                .doctor__devices--box-img
+                                                .doctor__devices--box-info
+                                                    .doctor__devices--box-browser Chrome
+                                                    .doctor__devices--box-desktop Dell alienware
+                                                    .doctor__devices--box-date Uzbekistan 19:55
+                                            .doctor__devices--box
+                                                .doctor__devices--box-img
+                                                .doctor__devices--box-info
+                                                    .doctor__devices--box-browser Chrome
+                                                    .doctor__devices--box-desktop Dell alienware
+                                                    .doctor__devices--box-date Uzbekistan 19:55
+
+                #doctorAdditionals.tab-pane
+                    .doctor__additional 
+                        .doctor__about-comment
+                            label(for='doctorAboutText') О себе
+                            textarea#doctorAboutText(
+                                name='doctor-about',
+                                cols='',
+                                rows=''
+                            ) 
+                        .doctor__specialization
+                            label(for='doctorSpecializaton') Способы связи
+                            .doctor__content--form-phone.form-add-smt 
+                                .doctor__content--form-phone
+                                    input#doctorSpecializaton.form-input
+                                    button.btn-blue
+                                        span.medid-icon-add
+
+                        .doctor__education 
+                            label(for='doctorEducation') Способы связи
+                            .doctor__content--form-phone.form-add-smt 
+                                .doctor__content--form-phone
+                                    input#doctorEducation.form-input
+                                    button.btn-blue
+                                        span.medid-icon-add
+
+                        .doctor__achievments
+                            label(for='doctorAchievnents') Способы связи
+                            .doctor__content--form-phone.form-add-smt 
+                                .doctor__content--form-phone
+                                    input#doctorAchievnents.form-input
+                                    button.btn-blue
+                                        span.medid-icon-add
+                #doctorSchedule.tab-pane
+                    .doctor__schedule 
+                        .doctor__schedule--left
+                            h4.doctor__schedule--title График работы
+                            .doctor__schedule--content 
+                                .doctor__schedule--times
+                                    .doctor__schedule--event 
+                                        .doctor__schedule--event-day
+                                            select.doctor__schedule--select-day(
+                                                name='scheduleDaySelect'
+                                            )
+                                                option(value='Понедельник') Понедельник
+                                                option(value='Вторник') Вторник
+                                                option(value='Среда') Среда
+                                        .doctor__schedule--event-start
+                                            input.form-input(
+                                                type='text',
+                                                name=''
+                                            )
+                                        .doctor__schedule--event-end
+                                            input.form-input(
+                                                type='text',
+                                                name=''
+                                            )
+                                        button.doctor__schedule--event-remove
+                                            span.medid-icon-add
+                                    .doctor__schedule--event 
+                                        .doctor__schedule--event-day
+                                            select.doctor__schedule--select-day(
+                                                name='scheduleDaySelect'
+                                            )
+                                                option(value='Понедельник') Понедельник
+                                                option(value='Вторник') Вторник
+                                                option(value='Среда') Среда
+                                        .doctor__schedule--event-start
+                                            input.form-input(
+                                                type='text',
+                                                name=''
+                                            )
+                                        .doctor__schedule--event-end
+                                            input.form-input(
+                                                type='text',
+                                                name=''
+                                            )
+                                        button.doctor__schedule--event-remove
+                                            span.medid-icon-add
+                                    .doctor__schedule--event 
+                                        .doctor__schedule--event-day
+                                            select.doctor__schedule--select-day(
+                                                name='scheduleDaySelect'
+                                            )
+                                                option(value='Понедельник') Понедельник
+                                                option(value='Вторник') Вторник
+                                                option(value='Среда') Среда
+                                        .doctor__schedule--event-start
+                                            input.form-input(
+                                                type='text',
+                                                name=''
+                                            )
+                                        .doctor__schedule--event-end
+                                            input.form-input(
+                                                type='text',
+                                                name=''
+                                            )
+                                        button.doctor__schedule--event-remove
+                                            span.medid-icon-add
+                                    .doctor__schedule--event 
+                                        .doctor__schedule--event-day
+                                            select.doctor__schedule--select-day(
+                                                name='scheduleDaySelect'
+                                            )
+                                                option(value='Понедельник') Понедельник
+                                                option(value='Вторник') Вторник
+                                                option(value='Среда') Среда
+                                        .doctor__schedule--event-start
+                                            input.form-input(
+                                                type='text',
+                                                name=''
+                                            )
+                                        .doctor__schedule--event-end
+                                            input.form-input(
+                                                type='text',
+                                                name=''
+                                            )
+                                        button.doctor__schedule--event-remove
+                                            span.medid-icon-add
+                                button.doctor__schedule--add.btn-blue
+                                    span.medid-icon-add
+                        .doctor__schedule--right
+                            h4.doctor__schedule--title Дни отсутствия
+                            .doctor__absence--list 
+                                .doctor__absence--box 
+                                    .doctor__absence--time-start
+                                        .doctor__absence--date 
+                                            span 26 сентября
+                                        .doctor__absence--hour
+                                            span 15:00 - 17:00
+                                            | -
+                                        .doctor__absence--day
+                                            span Вторник
+                                    .doctor__absence--time-end
+                                        .doctor__absence--date 
+                                            span 29 июля
+                                        .doctor__absence--hour
+                                            span 15:00 - 17:00
+                                        .doctor__absence--day
+                                            span Пятница
+                                    .doctor__absence--comment Проведение стоматологического осмотра и дальнейшее лечение
+                                    .doctor__absence--actions 
+                                        button.edit-btn 
+                                        button.remove-btn
+                                .doctor__absence--box 
+                                    .doctor__absence--time-start
+                                        .doctor__absence--date 
+                                            span 26 сентября
+                                        .doctor__absence--hour
+                                            span 15:00 - 17:00
+                                            | -
+                                        .doctor__absence--day
+                                            span Вторник
+                                    .doctor__absence--time-end
+                                        .doctor__absence--date 
+                                            span 29 июля
+                                        .doctor__absence--hour
+                                            span 15:00 - 17:00
+                                        .doctor__absence--day
+                                            span Пятница
+                                    .doctor__absence--comment Проведение стоматологического осмотра и дальнейшее лечение
+                                    .doctor__absence--actions 
+                                        button.edit-btn 
+                                        button.remove-btn
+                                .doctor__absence--box 
+                                    .doctor__absence--time-start
+                                        .doctor__absence--date 
+                                            span 26 сентября
+                                        .doctor__absence--hour
+                                            span 15:00 - 17:00
+                                            | -
+                                        .doctor__absence--day
+                                            span Вторник
+                                    .doctor__absence--time-end
+                                        .doctor__absence--date 
+                                            span 29 июля
+                                        .doctor__absence--hour
+                                            span 15:00 - 17:00
+                                        .doctor__absence--day
+                                            span Пятница
+                                    .doctor__absence--comment Проведение стоматологического осмотра и дальнейшее лечение
+                                    .doctor__absence--actions 
+                                        button.edit-btn 
+                                        button.remove-btn
+block endJsCustomScript
+    script(src='js/doctor-details.js', type='module') 

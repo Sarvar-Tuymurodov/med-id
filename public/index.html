@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>MED-ID</title>
+    <link href="plugins/select2/select2.min.css" type="text/css" rel="stylesheet">
+    <link href="../plugins/datatable/jquery.dataTables.min.css" type="text/css" rel="stylesheet">
+    <!-- BEGIN HEAD CUSTOM STYLES-->
+    <link href="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+    <link href="../plugins/datepicker/datepicker.css" rel="stylesheet" type="text/css">
+    <link href="../plugins/sweetalert/sweetalert2.min.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <!-- BEGIN HEAD CUSTOM JS-->
+  </head>
+  <body>
+    <header> 
+      <navbar class="nav">
+        <div class="nav__brand"><a class="nav__brand--img" href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="40" viewbox="0 0 120 40" fill="none">
+              <path d="M1 20C1 9.50659 9.50659 1 20 1H78.8238V39H20C9.5066 39 1 30.4934 1 20Z" fill="white" stroke="#4362EE" stroke-width="2"></path>
+              <path d="M120 20C120 31.0457 111.046 40 100 40L79.8238 40L79.8238 1.15704e-06L100 2.4917e-06C111.046 3.22237e-06 120 8.95431 120 20Z" fill="#4362EE"></path>
+              <path d="M16.6133 10.8118H20.3281L26.9844 17.4915L33.6406 10.8118H37.3555V29.1282H33.6406V15.9563L26.9844 22.3665L20.3281 15.9563V29.1282H16.6133V10.8118ZM41.4805 22.1672C41.4805 21.2297 41.6719 20.3352 42.0547 19.4836C42.4375 18.6243 42.9883 17.8665 43.707 17.2102C44.4258 16.554 45.3047 16.0305 46.3438 15.6399C47.3906 15.2493 48.5781 15.054 49.9062 15.054C51.2266 15.054 52.4141 15.2532 53.4688 15.6516C54.5312 16.0422 55.4297 16.5813 56.1641 17.2688C56.9062 17.9563 57.4727 18.7649 57.8633 19.6946C58.2617 20.6243 58.4609 21.6204 58.4609 22.6829C58.4609 22.8157 58.457 22.9602 58.4492 23.1165C58.4492 23.2649 58.4414 23.4016 58.4258 23.5266H45.3477C45.4961 23.9407 45.7344 24.3196 46.0625 24.6633C46.3984 25.0071 46.8164 25.304 47.3164 25.554C47.8164 25.804 48.3945 25.9993 49.0508 26.1399C49.707 26.2727 50.4336 26.3391 51.2305 26.3391C52.0273 26.3391 52.8203 26.2571 53.6094 26.093C54.3984 25.9211 55.1523 25.7063 55.8711 25.4485L57.043 28.0969C56.5898 28.3079 56.1289 28.4954 55.6602 28.6594C55.1992 28.8157 54.7148 28.9485 54.207 29.0579C53.707 29.1594 53.1797 29.2375 52.625 29.2922C52.0781 29.3469 51.5 29.3743 50.8906 29.3743C49.3359 29.3743 47.9727 29.1868 46.8008 28.8118C45.6289 28.4368 44.6484 27.925 43.8594 27.2766C43.0703 26.6282 42.4766 25.8665 42.0781 24.9915C41.6797 24.1165 41.4805 23.175 41.4805 22.1672ZM54.7812 20.8196C54.6562 20.4368 54.4609 20.0813 54.1953 19.7532C53.9375 19.4172 53.6133 19.1282 53.2227 18.886C52.832 18.636 52.3789 18.4407 51.8633 18.3C51.3477 18.1594 50.7812 18.0891 50.1641 18.0891C49.5078 18.0891 48.9102 18.1633 48.3711 18.3118C47.832 18.4602 47.3594 18.6594 46.9531 18.9094C46.5469 19.1594 46.207 19.4485 45.9336 19.7766C45.668 20.1047 45.4727 20.4524 45.3477 20.8196H54.7812ZM61.1328 22.2727C61.1328 21.1711 61.3398 20.179 61.7539 19.2961C62.168 18.4055 62.7383 17.6477 63.4648 17.0227C64.1992 16.3899 65.0664 15.9055 66.0664 15.5696C67.0742 15.2258 68.1641 15.054 69.3359 15.054C69.8359 15.054 70.3281 15.0852 70.8125 15.1477C71.3047 15.2102 71.7734 15.2961 72.2188 15.4055C72.6719 15.5149 73.0938 15.6477 73.4844 15.804C73.8828 15.9524 74.2344 16.1165 74.5391 16.2961V9.68677H78.0078V29.1282H74.5391V27.8274C74.2344 28.0383 73.875 28.2375 73.4609 28.425C73.0469 28.6125 72.6016 28.7766 72.125 28.9172C71.6484 29.0579 71.1523 29.1672 70.6367 29.2454C70.1289 29.3313 69.625 29.3743 69.125 29.3743C67.9531 29.3743 66.875 29.2024 65.8906 28.8586C64.9141 28.5149 64.0742 28.0305 63.3711 27.4055C62.668 26.7805 62.1172 26.0344 61.7188 25.1672C61.3281 24.2922 61.1328 23.3274 61.1328 22.2727ZM64.7773 22.2727C64.7773 22.8274 64.8867 23.3508 65.1055 23.843C65.332 24.3352 65.6523 24.7688 66.0664 25.1438C66.4883 25.511 66.9922 25.804 67.5781 26.0227C68.1719 26.2336 68.8359 26.3391 69.5703 26.3391C70.0391 26.3391 70.5078 26.2961 70.9766 26.2102C71.4453 26.1165 71.8945 25.9875 72.3242 25.8235C72.7617 25.6594 73.168 25.4602 73.543 25.2258C73.9258 24.9915 74.2578 24.7297 74.5391 24.4407V19.6477C74.1875 19.3665 73.8164 19.1282 73.4258 18.9329C73.0352 18.7375 72.6367 18.5774 72.2305 18.4524C71.8242 18.3274 71.4141 18.2375 71 18.1829C70.5859 18.1204 70.1836 18.0891 69.793 18.0891C68.9961 18.0891 68.2852 18.1985 67.6602 18.4172C67.043 18.6282 66.5195 18.9211 66.0898 19.2961C65.668 19.6711 65.3438 20.1125 65.1172 20.6204C64.8906 21.1282 64.7773 21.679 64.7773 22.2727Z" fill="#4362EE"></path>
+              <path d="M77.842 10.8118H81.5803V29.1282H77.842V10.8118ZM86.3264 10.8118H93.0413C95.0022 10.8118 96.7053 11.0227 98.1506 11.4446C99.5959 11.8665 100.791 12.4719 101.737 13.261C102.69 14.0422 103.397 14.9954 103.858 16.1204C104.326 17.2375 104.561 18.4954 104.561 19.8938C104.561 21.2219 104.33 22.4524 103.869 23.5852C103.408 24.7102 102.705 25.6868 101.76 26.5149C100.815 27.3352 99.6194 27.9797 98.1741 28.4485C96.7288 28.9094 95.0256 29.1399 93.0647 29.1399L86.3264 29.1282V10.8118ZM93.9553 25.9172C95.0647 25.9172 96.0374 25.7766 96.8733 25.4954C97.7092 25.2063 98.4045 24.8 98.9592 24.2766C99.5217 23.7532 99.9436 23.1204 100.225 22.3782C100.506 21.636 100.647 20.8079 100.647 19.8938C100.647 18.9954 100.506 18.1868 100.225 17.468C99.9436 16.7415 99.5217 16.1282 98.9592 15.6282C98.4045 15.1204 97.7092 14.7297 96.8733 14.4563C96.0374 14.1829 95.0647 14.0461 93.9553 14.0461H90.0413V25.9172H93.9553Z" fill="white"></path>
+            </svg></a></div>
+        <div class="nav__burger-menu">
+          <div class="nav__left">
+            <ul class="nav__list">
+              <li class="nav__item active"><a class="nav__link" href="index.html" data-i18n="Resources.Navbar.СlientPage">Клиенты</a></li>
+              <li class="nav__item"><a class="nav__link" href="/doctor.html" data-i18n="Resources.Navbar.Workers">Сотрудники</a></li>
+              <li class="nav__item"><a class="nav__link" href="/service.html" data-i18n="Resources.Navbar.Services">Услуги</a></li>
+              <li class="nav__item"><a class="nav__link" href="/cashbox" data-i18n="Resources.Navbar.Cashbox">Касса</a></li>
+            </ul>
+          </div>
+          <div class="nav__right">
+            <div class="nav__actions">
+              <div class="nav-notification__addnew" id="nav-notificationAddNew" data-has__tooltip="true" data-tooltip__type="Resources" data-tooltip__value="Resources.Tooltips.AddNewNotifications.TooltipText">
+                <svg width="14" height="18" viewbox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="newNotification__icon_main" d="M2.07492 10.0667H4.64992V16.0667C4.64992 17.4667 5.40826 17.7501 6.33326 16.7001L12.6416 9.53341C13.4166 8.65841 13.0916 7.93341 11.9166 7.93341H9.34159V1.93341C9.34159 0.533411 8.58326 0.250077 7.65826 1.30008L1.34992 8.46674C0.583255 9.35008 0.908256 10.0667 2.07492 10.0667Z"></path>
+                </svg>
+              </div>
+              <div class="nav-notification" id="nav-notificationIcon" data-btn--trigger="true" data-has__tooltip="true" data-tooltip__type="Resources" data-tooltip__value="Resources.Tooltips.Notifications.TooltipText"><span class="nav-notification--text" id="notificationIconCount">25</span><span class="nav-notification--ring" id="notificationIconRing">
+                  <svg width="12" height="12" viewbox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="ring__main-part" d="M6.01021 1.45508C4.35524 1.45508 3.01027 2.80005 3.01027 4.45502V5.9C3.01027 6.20499 2.88027 6.66998 2.72527 6.92998L2.15029 7.88496C1.79529 8.47495 2.04029 9.12994 2.69028 9.34993C4.84524 10.0699 7.17019 10.0699 9.32515 9.34993C9.93014 9.14994 10.1951 8.43495 9.86514 7.88496L9.29015 6.92998C9.14016 6.66998 9.01016 6.20499 9.01016 5.9V4.45502C9.01016 2.80505 7.66018 1.45508 6.01021 1.45508Z"></path>
+                    <path class="ring__part-top" d="M6.93493 1.59996C6.77993 1.55496 6.61993 1.51996 6.45494 1.49996C5.97494 1.43996 5.51495 1.47496 5.08496 1.59996C5.22996 1.22997 5.58995 0.969971 6.00994 0.969971C6.42994 0.969971 6.78993 1.22997 6.93493 1.59996Z" stroke-width="1.19999" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path class="ring__part-down" d="M7.50971 9.52979C7.50971 10.3548 6.83472 11.0298 6.00974 11.0298C5.59975 11.0298 5.21975 10.8598 4.94976 10.5898C4.67976 10.3198 4.50977 9.93978 4.50977 9.52979" stroke-width="1.19999" stroke-miterlimit="10"></path>
+                  </svg></span></div>
+              <div class="notification-list dropdown-window" id="nav-notification-list" data-dropdown-parent="nav-notificationIcon">
+                <div class="notification-list-head"><span class="notification-list--text">&Ucy;&vcy;&iecy;&dcy;&ocy;&mcy;&lcy;&iecy;&ncy;&icy;&yacy;</span><span class="notification-list--read-all">&Pcy;&rcy;&ocy;&chcy;&icy;&tcy;&acy;&ncy;&ocy; &vcy;&scy;&iocy;</span></div>
+                <div class="notification-list--body">
+                  <div class="notification-list-body--tabs">
+                    <div class="body-tabs--nodata"><span class="notification-list-body--no-data">&Ncy;&iecy;&tcy; &dcy;&acy;&ncy;&ncy;&ycy;&khcy;</span></div>
+                    <div class="body-tabs--events active">
+                      <div class="notification-item" data-notification-id="68ae3b2e-3b23-11ed-a261-0242ac120002">
+                        <div class="notification-header">
+                          <div class="user-info">
+                            <div class="user" data-user-id="01272eb4-3b25-11ed-a261-0242ac120002"><span class="medid-icon-user"></span><span class="user-name">&Kcy;&acy;&rcy;&icy;&mcy;&ocy;&vcy;&acy; &Ncy;&icy;&gcy;&ocy;&rcy;&acy;</span></div>
+                            <div class="notification-direction"><span class="medid-icon-short-diagnose"></span><span class="notification-direction-type" data-notification-type="">&Zcy;&acy;&pcy;&icy;&scy;&softcy; &ncy;&acy; &pcy;&rcy;&icy;&iocy;&mcy;</span></div>
+                          </div>
+                          <div class="notification-info">
+                            <div class="notification-date">06.07.2022</div>
+                            <div class="notification-time"><span class="time-start">12:00</span><span>-</span><span class="time-end">13:00</span></div>
+                          </div>
+                        </div>
+                        <div class="notification-details">&Pcy;&rcy;&ocy;&vcy;&iecy;&dcy;&iecy;&ncy;&icy;&iecy; &scy;&tcy;&ocy;&mcy;&acy;&tcy;&ocy;&lcy;&ocy;&gcy;&icy;&chcy;&iecy;&scy;&kcy;&ocy;&gcy;&ocy; &ocy;&scy;&mcy;&ocy;&tcy;&rcy;&acy; &icy; &dcy;&acy;&lcy;&softcy;&ncy;&iecy;&jcy;&shcy;&iecy;&iecy; &lcy;&iecy;&chcy;&iecy;&ncy;&icy;&iecy;</div>
+                        <div class="notification-action"><span class="medid-icon-active-notification"></span>
+                          <button class="notification-action-btn btn-success" data-i18n="">&Pcy;&rcy;&ocy;&chcy;&icy;&tcy;&acy;&ncy;&ocy;</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="loading loading-min">
+                  <svg class="loading-spinner" width="40" height="40" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="loading-circle" cx="20" cy="20" r="18"></circle>
+                  </svg><span>&Pcy;&rcy;&ocy;&vcy;&iecy;&rcy;&kcy;&acy; &ucy;&vcy;&iecy;&dcy;&ocy;&mcy;&lcy;&iecy;&ncy;&icy;&jcy;</span>
+                </div>
+              </div>
+              <div class="nav-lang" id="nav-lang" data-btn--trigger="true" data-has__tooltip="true" data-tooltip__type="Resources" data-tooltip__value="Resources.Tooltips.SelectLang.TooltipText">
+                <div class="current-lang__text" id="nav-lang-current-lang__text" data-active-lang="ru">ru</div>
+                <div class="lang-change">
+                  <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.06 18.6699L16.92 14.3999L14.78 18.6699"></path>
+                    <path d="M15.1699 17.9099H18.6899"></path>
+                    <path d="M16.9201 22.0001C14.1201 22.0001 11.8401 19.73 11.8401 16.92C11.8401 14.12 14.1101 11.8401 16.9201 11.8401C19.7201 11.8401 22.0001 14.11 22.0001 16.92C22.0001 19.73 19.7301 22.0001 16.9201 22.0001Z"></path>
+                    <path d="M5.02 2H8.94C11.01 2 12.01 3.00002 11.96 5.02002V8.94C12.01 11.01 11.01 12.01 8.94 11.96H5.02C3 12 2 11 2 8.92999V5.01001C2 3.00001 3 2 5.02 2Z"></path>
+                    <path d="M9.00995 5.84985H4.94995"></path>
+                    <path d="M6.96997 5.16992V5.84991"></path>
+                    <path d="M7.98994 5.83984C7.98994 7.58984 6.61994 9.00983 4.93994 9.00983"></path>
+                    <path d="M9.0099 9.01001C8.2799 9.01001 7.61991 8.62 7.15991 8"></path>
+                    <path d="M2 15C2 18.87 5.13 22 9 22L7.95 20.25"></path>
+                    <path d="M22 9C22 5.13 18.87 2 15 2L16.05 3.75"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="lang-list dropdown-window" id="nav-lang--lang-list" data-dropdown-parent="nav-lang">
+                <div class="lang-item lang-link lang-ru selected" data-value="ru"><span class="lang-short-name">ru</span><span class="lang-full-name">&Rcy;&ucy;&scy;&scy;&kcy;&icy;&jcy;</span></div>
+                <div class="lang-item lang-link lang-uz" data-value="uz"><span class="lang-short-name">uz</span><span class="lang-full-name">&Ucy;&zcy;&bcy;&iecy;&kcy;&scy;&kcy;&icy;&jcy;</span></div>
+                <div class="lang-item lang-link lang-en" data-value="en"><span class="lang-short-name">en</span><span class="lang-full-name">&Acy;&ncy;&gcy;&lcy;&icy;&jcy;&scy;&kcy;&icy;&jcy;</span></div>
+              </div>
+              <div class="nav-user" id="nav-userSettings" data-btn--trigger="true" data-has__tooltip="true" data-tooltip__type="Resources" data-tooltip__value="Resources.Tooltips.Users.TooltipText">
+                <label for=""> </label>
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z"></path>
+                  <path d="M20.5899 22C20.5899 18.13 16.7399 15 11.9999 15C7.25991 15 3.40991 18.13 3.40991 22"></path>
+                </svg>
+              </div>
+              <div class="burger menu" id="nav-burger">
+                <div class="icon"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav__burger"> <span></span></div>
+      </navbar>
+    </header>
+    <main id="app">
+      <div class="main-page__container">
+        <div class="calendar-block"> 
+          <div class="calendar-block__header">
+            <div class="calendar-block__actions">
+              <button class="btn-blue calendar-block__add-event" data-modal-target="#addEventModal"><i class="medid-icon-add"></i></button>
+              <input class="calendar-block__search-event input-custom-search" id="searchFilterInput" type="text" data-i18n-placeholder="Resources.Calendar.SearchEvents" placeholder="Search by events">
+              <button class="btn-default calendar-block__filter-event" id="filterCalendarBtn" data-modal-target="#filterCalendarEvents"><i class="medid-icon-filter-off"></i></button>
+              <button class="btn-default calendar-block__filter-clear" id="clearFilterBtn"><span class="medid-icon-filter-on"></span></button>
+            </div>
+            <div class="calendar-block__date-range date-range">
+              <div class="calendar-block__date-range--content"><span class="date-range__goto-prev" id="gotoPrevCalendar"><i class="medid-icon-chevron-left"></i></span><span class="date-range__text" id="dateRangeText">Сентябрь</span><span class="date-range__goto-next" id="gotoNextCalendar"><i class="medid-icon-chevron-right"></i></span></div>
+            </div>
+            <div class="calendar-block__types-calendar calendar-block__tabs tab-list">
+              <button class="btn-default back-to-now d-none" id="calendarBackToNow">
+                <p id="calendarBackToNowText"></p>
+              </button>
+              <button class="btn-default calendar-tab-btn" id="calendarTabDoctors" data-tab="calendarTabPaneDoctor"><i class="medid-icon-add-doctor"></i></button>
+              <button class="switch__to-month btn-default calendar-tab-btn active" id="calendarTabMonthBtn" data-tab="calendarTabPaneMonth"> <i class="medid-icon-month"></i></button>
+              <button class="switch__to-week btn-default calendar-tab-btn" id="calendarTabWeekBtn" data-tab="calendarTabPaneWeek"><i class="medid-icon-week"></i></button>
+              <button class="switch__to-day btn-default calendar-tab-btn" id="calendarTabDayBtn" data-tab="calendarTabPaneDay"><i class="medid-icon-day"></i></button>
+            </div>
+          </div>
+          <div class="calendar-block__body">
+            <div class="tab-content calendar-block__content"> 
+              <div class="tab-pane calendar-block__doctor" id="calendarTabPaneDoctor">
+                <div class="calendar-doctor"> 
+                  <div class="calendar-doctor__left"> 
+                    <div class="calendar-doctor__left--top">
+                      <div class="calendar-doctor__left--time"><span class="medid-icon-time"></span></div>
+                    </div>
+                    <div class="calendar-doctor__left--body">
+                      <div class="calendar-doctor__hour">
+                        <div class="calendar-doctor__hour--left"><span>08</span></div>
+                        <div class="calendar-doctor__hour--right"><span>00</span><span>15</span><span>30</span><span>45</span></div>
+                      </div>
+                      <div class="calendar-doctor__hour">
+                        <div class="calendar-doctor__hour--left"><span>09</span></div>
+                        <div class="calendar-doctor__hour--right"><span>00</span><span>15</span><span>30</span><span>45</span></div>
+                      </div>
+                      <div class="calendar-doctor__hour">
+                        <div class="calendar-doctor__hour--left"><span>10</span></div>
+                        <div class="calendar-doctor__hour--right"><span>00</span><span>15</span><span>30</span><span>45</span></div>
+                      </div>
+                      <div class="calendar-doctor__hour">
+                        <div class="calendar-doctor__hour--left"><span>11</span></div>
+                        <div class="calendar-doctor__hour--right"><span>00</span><span>15</span><span>30</span><span>45</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="calendar-doctor__right"> 
+                    <table class="custom-table calendar-doctor__table"> 
+                      <thead class="calendar-doctor__thead" id="calendarDoctorThead">
+                        <tr>
+                          <th>--/--</th>
+                          <th>--/--</th>
+                          <th>--/--</th>
+                          <th>--/--</th>
+                        </tr>
+                      </thead>
+                      <tbody class="calendar-doctor__tbody" id="calendarDoctorTbody"> 
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                          <td> 
+                            <div class="calendar-doctor__events"></div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="calendar-doctor__no-events">
+                    <h3 id="calendarDoctorNoEvents"></h3>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane calendar-block__month active" id="calendarTabPaneMonth">
+                <table class="custom-table calendar-month__table">
+                  <thead class="calendar-month__thead">
+                    <tr>
+                      <th scope="col" data-i18n="Resources.Calendar.Week.Short.0">Пн</th>
+                      <th scope="col" data-i18n="Resources.Calendar.Week.Short.1">Вт</th>
+                      <th scope="col" data-i18n="Resources.Calendar.Week.Short.2">Ср</th>
+                      <th scope="col" data-i18n="Resources.Calendar.Week.Short.3">Чт</th>
+                      <th scope="col" data-i18n="Resources.Calendar.Week.Short.4">Пт</th>
+                      <th scope="col" data-i18n="Resources.Calendar.Week.Short.5">Сб</th>
+                      <th scope="col" data-i18n="Resources.Calendar.Week.Short.6">Вс</th>
+                    </tr>
+                  </thead>
+                  <tbody class="calendar-month__tbody">
+                    <tr class="calendar-month__days" id="calendarMonthDays"></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="tab-pane calendar-block__week" id="calendarTabPaneWeek">
+                <table class="custom-table calendar-week__table">
+                  <thead class="calendar-week__thead" id="calendarWeekThead"></thead>
+                  <tbody class="calendar-week__tbody" id="calendarWeekTbody"></tbody>
+                </table>
+              </div>
+              <div class="tab-pane calendar-block__day" id="calendarTabPaneDay">
+                <table class="custom-table calendar-day__table">
+                  <thead class="calendar-day__thead">
+                    <tr>
+                      <th scope="col" data-i18n="Resources.Calendar.Day.Event">События</th>
+                      <th scope="col" data-i18n="Resources.Calendar.Day.Client">Клиент</th>
+                      <th scope="col" data-i18n="Resources.Calendar.Day.Doctor">Доктор</th>
+                      <th scope="col" data-i18n="Resources.Calendar.Day.Comment">Описание</th>
+                    </tr>
+                  </thead>
+                  <tbody class="calendar-day__tbody" id="calendarDayTbody">
+                    <tr>
+                      <td>
+                        <div class="calendar-day__actions"><span class="medid-icon-continius"></span><span class="medid-icon-active-notification"></span><span class="medid-icon-urgent"></span><span class="medid-icon-important"></span></div>
+                      </td>
+                      <td>
+                        <div class="calendar-day__client"><span class="calendar-day__client--name">Кристина Крупчатникова</span>
+                          <div class="calendar-day__client--phone"> <a href="tel:+998998856545">+998 99 885 65 45</a><a class="call-to-client-btn" href="JavaScript:void(0)"><span class="medid-icon-PhoneNumber"> </span></a></div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="calendar-day__doctor"><span class="calendar-day__doctor--name">Файзуллаев Ильхом</span>
+                          <div class="calendar-day__doctor--time"> <span>17:00 - 18:00</span></div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="calendar-day__comment"><span>Разнообразный и богатый опыт говорит нам, что сложившаяся структура организации</span></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="client-block"> 
+          <div class="client-block__header"></div>
+          <table class="custom-table client-block__table" id="clientsDataTable">
+            <thead>
+              <tr>
+                <th>События</th>
+                <th>Баланс</th>
+                <th>Посещение</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    <div class="modal add-event-modal" id="addEventModal">
+      <div class="modal__content"> 
+        <div class="modal__header">
+          <h2 class="modal__title">Add event</h2>
+          <div class="modal__actions">
+            <button class="btn-default add-event__important" id="addEventIsImportant"><span class="medid-icon-important"></span></button>
+            <button class="btn-default add-event__flash" id="addEventIsFlash"><span class="medid-icon-urgent"></span></button>
+            <button class="btn-default add-event__notify" id="addEventIsNotify"><span class="medid-icon-active-notification"></span></button>
+            <button class="btn-default add-event__continius" id="addEventIsContinius"><span class="medid-icon-continius"></span></button>
+            <button class="btn-default add-event__repeat" id="addEventIsRepeat"><span class="medid-icon-repeatable"></span></button>
+          </div>
+          <div class="modal__form-btns">
+            <button class="btn-blue add-event__save">Сохранить</button>
+            <button class="btn-close modal__close" href="JavaScript:void(0)"><span class="medid-icon-add"></span></button>
+          </div>
+        </div>
+        <div class="modal__body"> 
+          <div class="modal__body--left">
+            <div class="add-event__date form-group">
+              <input class="form-input" id="addEventDate" required="" type="text" autocomplete="off">
+              <label class="form-label" data-i18n="Resources.AddEvent.Date">Дата</label>
+              <div class="form-border error-surname"></div>
+            </div>
+            <div class="add-event__type-event form-group">
+              <select class="form-input" id="addEventYtpe" required="" autocomplete="off"></select>
+              <label class="form-label form-select-label" data-i18n="Resources.AddEvent.EventType">Hodisa turi</label>
+              <div class="form-border error-surname"></div>
+            </div>
+            <div class="add-event__part">
+              <h3>Стоматология Tabassum</h3>
+              <button class="add-event__doctor-btn btn-blue" id="addEventDoctorBtn"><span class="medid-icon-user"></span>
+                <p data-i18n="Resources.AddEvent.AddDoctor">Добавить врача</p>
+              </button>
+              <div class="add-event__doctor-form">
+                <div class="add-event__doctor form-group">
+                  <select class="form-input" id="addEventDoctor" required="" autocomplete="off"></select>
+                  <label class="form-label form-select-label" data-i18n="Resources.AddEvent.Pacient">Hodisa turi</label>
+                  <div class="form-border error-surname"></div>
+                </div>
+              </div>
+              <button class="add-event__pacient-btn btn-blue" id="addEventPacientBtn"><span class="medid-icon-add-doctor"></span>
+                <p data-i18n="Resources.AddEvent.AddPacient"></p>
+              </button>
+              <div class="add-event__pacient-form">
+                <form class="add-event__pacient-radio">
+                  <div class="add-event__pacient-radio--left">
+                    <input id="addEventPacientIsNew" type="radio" name="newOrOldClient" checked>
+                    <label for="addEventPacientIsNew">Pacient</label>
+                  </div>
+                  <div class="add-event__pacient-radio--right">
+                    <input id="addEventPacientIsOld" type="radio" name="newOrOldClient">
+                    <label for="addEventPacientIsOld">New Pacient</label>
+                  </div>
+                </form>
+                <div class="add-event__pacient form-group">
+                  <select class="form-input" id="addEventPacient" required="" autocomplete="off"></select>
+                  <label class="form-label form-select-label" data-i18n="Resources.AddEvent.Doctor">Hodisa turi</label>
+                  <div class="form-border error-surname"></div>
+                </div>
+                <div class="add-event__phone form-group">
+                  <input class="form-input" id="addEventPhone" required="" autocomplete="off">
+                  <label class="form-label" data-i18n="Resources.Global.Clients.Form.EventType">Hodisa turi</label>
+                  <div class="form-border error-surname"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal__body--right">
+            <div class="add-event__time"> 
+              <div class="add-event__time-start form-group">
+                <input class="form-input cm-timepicker" id="addEventTimeFrom" data-element-type="c-timepicker" required="" type="text" autocomplete="off">
+                <label class="form-label" data-i18n="Resources.Global.Calendar.Modal.Date">с</label>
+                <div class="form-border error-surname"></div>
+              </div>
+              <div class="add-event__time-end form-group">
+                <input class="form-input cm-timepicker" id="addEventTimeTo" data-element-type="c-timepicker" required="" type="text" autocomplete="off">
+                <label class="form-label" data-i18n="Resources.Global.Calendar.Modal.Date">до</label>
+                <div class="form-border error-surname"></div>
+              </div>
+            </div>
+            <div class="add-event__comment form-group"> 
+              <textarea class="form-input" required="" type="text" autocomplete="off"></textarea>
+              <label class="form-label" data-i18n="Resources.Global.Calendar.Modal.Date">до</label>
+              <div class="form-border error-surname"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal__footer"></div>
+      </div>
+    </div>
+    <div class="modal filter-events-modal" id="filterCalendarEvents">
+      <div class="modal__content"> 
+        <div class="modal__header"> 
+          <h2 class="modal__title">Filter events</h2>
+          <button class="btn-close modal__close" href="JavaScript:void(0)"> <span class="medid-icon-add"></span></button>
+        </div>
+        <div class="modal__body">
+          <div class="filter-event__by-pacient form-group">
+            <select class="form-input" id="filterEventByPacient" required="" autocomplete="off"></select>
+            <label class="form-label form-select-label" data-i18n="Resources.Global.Clients.Form.EventType">Пациент</label>
+            <div class="form-border error-surname"></div>
+          </div>
+          <div class="filter-event__by-doctor form-group">
+            <select class="form-input" id="filterEventByDoctor" required="" autocomplete="off"></select>
+            <label class="form-label form-select-label" data-i18n="Resources.Global.Clients.Form.EventType">Лечащий врач</label>
+            <div class="form-border error-surname"></div>
+          </div>
+          <div class="filter-event__by-time form-group">
+            <input class="form-input" id="filterEventByTime" required="" autocomplete="off">
+            <label class="form-label" data-i18n="Resources.Global.Clients.Form.EventType">Временный интервал</label>
+            <div class="form-border error-surname"></div>
+          </div>
+          <div class="filter-event__by-actions">
+            <h3>События</h3>
+            <div class="filter-event__by-actions-group">
+              <button class="btn-default filter-event__important" id="filterEventIsImportant"> <span class="medid-icon-important"></span></button>
+              <button class="btn-default filter-event__flash" id="filterEventIsFlash"> <span class="medid-icon-urgent"></span></button>
+              <button class="btn-default filter-event__notify" id="filterEventIsNotify"><span class="medid-icon-active-notification"></span></button>
+              <button class="btn-default filter-event__continius" id="filterEventIsContinius"><span class="medid-icon-continius"></span></button>
+              <button class="btn-default filter-event__repeat" id="filterEventIsRepeat"><span class="medid-icon-repeatable"></span></button>
+            </div>
+          </div>
+        </div>
+        <div class="modal__footer">
+          <button class="btn-blue filter-event__confirm modal-save" id="applyFilterForm">Применить</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="plugins/vendor/vendors.min.js"></script>
+  <script src="../plugins/cookie/cookie.js" type="text/javascript"></script>
+  <script src="js/components/helper/helper.js"></script>
+  <script src="plugins/momentjs/moment.min.js"></script>
+  <script src="plugins/select2/select2.min.js"></script>
+  <!-- Calendar Js codes-->
+  <script src="../plugins/datatable/jquery.dataTables.min.js"></script>
+  <script src="../plugins/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="../plugins/daterangepicker/daterangepicker.js"></script>
+  <script src="../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js"></script>
+  <script src="../plugins/i18n/i18next.js"></script>
+  <script src="../js/app.js" type="module"></script>
+  <script src="../js/calendar/calendar.js" type="module"></script>
+</html>

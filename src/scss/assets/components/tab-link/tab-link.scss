@@ -1,0 +1,40 @@
+.tab-links-parent {
+    display: flex;
+    padding: 15px 0;
+    margin: 0 -15px;
+    margin-bottom: 25px;
+}
+
+.tab-link {
+    color: $color-clay;
+    font-size: 16px;
+    font-family: $lato600;
+    margin: 0 15px;
+    cursor: pointer;
+    padding: 5px 7px;
+
+    position: relative;
+
+    &.active {
+        color: $color-blue;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $color-blue;
+            border-radius: 10px;
+        }
+    }
+}
+
+.tab-pane {
+    display: none;
+
+    &.active {
+        display: inline-block;
+    }
+}

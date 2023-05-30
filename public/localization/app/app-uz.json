@@ -1,0 +1,67 @@
+{
+    "Resources": {
+        "Navbar": {
+            "СlientPage": "Mijozlar",
+            "Workers": "Shifokorlar",
+            "Services": "Xizmatlar",
+            "Cashbox": "Kassa"
+        },
+        "Tooltips": {
+            "AddNewNotification": ""
+        },
+        "Calendar": {
+            "SearchEvents": "Hodisa izlash",
+            "Month": {
+                "Full": {
+                    "1": "yanvar",
+                    "2": "fevral",
+                    "3": "mart",
+                    "4": "aprel",
+                    "5": "may",
+                    "6": "iyun",
+                    "7": "iyul",
+                    "8": "avgust",
+                    "9": "sentabr",
+                    "10": "oktabr",
+                    "11": "noyabr",
+                    "12": "dekabr"
+                },
+                "Events": "hodisa"
+            },
+            "Week": {
+                "Short": {
+                    "0": "Du",
+                    "1": "Se",
+                    "2": "Cho",
+                    "3": "Pa",
+                    "4": "Ju",
+                    "5": "Sha",
+                    "6": "Ya"
+                },
+                "Events": "hodisalar"
+            },
+            "Day": {
+                "Event": "Hodisa",
+                "Client": "Mijoz",
+                "Doctor": "Shifokor",
+                "Comment": "Qo`shimcha"
+            }
+        },
+        "AddEvent": {
+            "Add": "Hodisa qo`shish",
+            "Date": "Sana",
+            "EvenType": "Hodisa turi",
+            "SelectPacinet": "Mijoz tanlang",
+            "AddPacient": "Mijoz qo`shish",
+            "AddDoctor": "Shifokor qo`shish",
+            "SelectDoctor": "Shifokor tanlang",
+            "Comment": "Qo`shimcha",
+            "Doctor": "Shifokor",
+            "Pacient": "Mijoz"
+        },
+        "Modal": {
+            "Save": "Saqlash",
+            "Submit": "Tasdiqlash"
+        }
+    }
+}

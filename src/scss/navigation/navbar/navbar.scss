@@ -1,0 +1,63 @@
+@import '../../assets/components/nav_lang/css/nav-langs.scss';
+@import '../../assets/components/nav_notification/css/nav-notification.scss';
+@import '../../assets/components/nav_users/css/nav-users.scss';
+@import '../../assets/components/nav-link/nav-links.scss';
+
+////HEADER NAVBAR
+.nav {
+    background-color: $color-white;
+    padding: 15px 50px;
+    display: flex;
+    box-shadow: $default-box-shadow;
+
+    &__brand {
+        width: 120px;
+        height: 40px;
+        margin-right: calc(100vw / 19);
+
+        &--img {
+            width: 100%;
+        }
+    }
+
+    &__burger-menu {
+        display: flex;
+        flex-grow: 1;
+    }
+
+    &__left {
+        flex: 0 0 40%;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+
+        & .nav__item {
+            list-style: none;
+            padding: 10px 20px;
+        }
+
+        & .nav__link {
+            font-size: 18px;
+            color: $color-clay;
+            font-family: LatoWebSemibold;
+        }
+    }
+
+    &__right {
+        flex: 0 0 60%;
+        flex-grow: 1;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        margin: 0 -10px;
+        justify-content: flex-end;
+
+        & > div {
+            margin: 0 10px;
+        }
+    }
+}

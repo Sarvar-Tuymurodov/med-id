@@ -1,0 +1,63 @@
+.calendar-block 
+    .calendar-block__header
+        .calendar-block__actions
+            button.btn-blue.calendar-block__add-event(
+                data-modal-target='#addEventModal'
+            )
+                i.medid-icon-add
+
+            input#searchFilterInput.calendar-block__search-event.input-custom-search(
+                type='text',
+                data-i18n-placeholder='Resources.Calendar.SearchEvents',
+                placeholder='Search by events'
+            )
+            button#filterCalendarBtn.btn-default.calendar-block__filter-event(
+                data-modal-target='#filterCalendarEvents'
+            )
+                i.medid-icon-filter-off
+            button#clearFilterBtn.btn-default.calendar-block__filter-clear
+                span.medid-icon-filter-on
+
+        .calendar-block__date-range.date-range
+            .calendar-block__date-range--content
+                span#gotoPrevCalendar.date-range__goto-prev
+                    i.medid-icon-chevron-left
+
+                span#dateRangeText.date-range__text Сентябрь
+
+                span#gotoNextCalendar.date-range__goto-next
+                    i.medid-icon-chevron-right
+
+        .calendar-block__types-calendar.calendar-block__tabs.tab-list
+            button#calendarBackToNow.btn-default.back-to-now.d-none
+                p#calendarBackToNowText
+            button#calendarTabDoctors.btn-default.calendar-tab-btn(
+                data-tab='calendarTabPaneDoctor'
+            )
+                i.medid-icon-add-doctor
+
+            button#calendarTabMonthBtn.switch__to-month.btn-default.calendar-tab-btn.active(
+                data-tab='calendarTabPaneMonth'
+            ) 
+                i.medid-icon-month
+
+            button#calendarTabWeekBtn.switch__to-week.btn-default.calendar-tab-btn(
+                data-tab='calendarTabPaneWeek'
+            )
+                i.medid-icon-week
+
+            button#calendarTabDayBtn.switch__to-day.btn-default.calendar-tab-btn(
+                data-tab='calendarTabPaneDay'
+            )
+                i.medid-icon-day
+
+    .calendar-block__body
+        .tab-content.calendar-block__content 
+            #calendarTabPaneDoctor.tab-pane.calendar-block__doctor
+                include calendar-components/calendar-doctor.pug
+            #calendarTabPaneMonth.tab-pane.calendar-block__month.active
+                include calendar-components/calendar-month.pug
+            #calendarTabPaneWeek.tab-pane.calendar-block__week
+                include calendar-components/calendar-week.pug
+            #calendarTabPaneDay.tab-pane.calendar-block__day
+                include calendar-components/calendar-day.pug

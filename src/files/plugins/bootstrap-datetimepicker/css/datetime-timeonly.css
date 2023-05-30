@@ -1,0 +1,45 @@
+﻿.timeonly table.table-condensed tr {
+    max-height: 32px;
+    line-height: 32px;
+}
+
+.timeonly table.table-condensed tr {
+    max-height: 32px;
+    line-height: 32px;
+}
+
+.timeonly table.table-condensed tr td {
+    height: 28px;
+    line-height: 28px;
+    width: 54px;
+    padding: 0;
+}
+
+.timeonly table.table-condensed tr td:last-child {
+    height: 28px;
+    line-height: 28px;
+    width: 54px !important;
+    padding: 0;
+}
+
+.timeonly table.table-condensed tr td a {
+    padding: 0;
+}
+
+.timeonly table.table-condensed tr td a span {
+    display: inline-block;
+    width: 60px;
+    height: 28px;
+    line-height: 28px;
+    margin: 2px 1.5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.timeonly {
+    width: 200px !important
+}
+
+.hour.disabled {
+    color: #dadada !important
+}

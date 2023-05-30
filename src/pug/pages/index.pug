@@ -1,0 +1,37 @@
+extends ../clear.pug
+block headCssCustomStyle
+    link(
+        href='../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css',
+        rel='stylesheet',
+        type='text/css'
+    )
+    link(
+        href='../plugins/datepicker/datepicker.css',
+        rel='stylesheet',
+        type='text/css'
+    )
+    link(
+        href='../plugins/sweetalert/sweetalert2.min.css',
+        rel='stylesheet',
+        type='text/css'
+    )
+    link(href='css/main.css', type='text/css', rel='stylesheet')
+block mainContent
+    .main-page__container
+        include ../components/calendar/calendar.pug
+        include ../components/client/client.pug
+
+block modalHtml
+    include ../components/modals/add-event.pug
+    include ../components/modals/filter-calendar-events.pug
+
+block endJsCustomScript
+    script(src='../plugins/datatable/jquery.dataTables.min.js')
+    script(src='../plugins/sweetalert/sweetalert2.all.min.js')
+    script(src='../plugins/daterangepicker/daterangepicker.js')
+    script(
+        src='../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.js'
+    )
+    script(src='../plugins/i18n/i18next.js')
+    script(src='../js/app.js', type='module')
+    script(src='../js/calendar/calendar.js', type='module')

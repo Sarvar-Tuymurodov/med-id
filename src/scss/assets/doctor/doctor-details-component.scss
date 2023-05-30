@@ -1,0 +1,52 @@
+@import 'doctor-tabs/doctor-tab-main.scss';
+@import 'doctor-tabs/doctor-tab-additionals.scss';
+@import 'doctor-tabs/doctor-tab-schedule.scss';
+
+.doctor {
+    &__container {
+        background-color: $color-white;
+        border-radius: $default-border-radius;
+        box-shadow: $default-box-shadow;
+        width: 100%;
+        margin-bottom: 50px;
+        padding: 20px 40px;
+        padding-bottom: 30px;
+        overflow: hidden;
+    }
+
+    &__header {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            left: -100px;
+            height: 2px;
+            background-color: $color-background-light;
+            bottom: 0;
+        }
+
+        &--tab-list {
+            padding: 0;
+            padding-top: 10px;
+        }
+
+        &--save-or-cancel {
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            display: flex;
+
+            & button {
+                height: 40px;
+                min-width: 140px;
+
+                &:first-child {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
