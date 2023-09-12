@@ -18,7 +18,7 @@ export const clientsDataTable = () => {
                 "<'dt__bottom'<'dt__pages-count 'i><'dt__pagination'p>>",
             ajax: {
                 beforeSend: function (xhr) {
-                    generateTableSkeleton('clientsDataTable', 14, 3);
+                    // generateTableSkeleton('clientsDataTable', 14, 3);
                 },
                 url: `${host}/api/Clients`,
                 method: 'GET',

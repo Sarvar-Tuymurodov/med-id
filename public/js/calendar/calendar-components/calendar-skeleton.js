@@ -6,22 +6,22 @@ import {
 
 const calendarSkeleton = (table) => {
     if (calendarSettings.month.isActive) {
-        generateCalendarSkeleton('.calendar-month__day--bottom');
+        // generateCalendarSkeleton('.calendar-month__day--bottom');
         return;
     }
 
     if (calendarSettings.week.isActive) {
-        generateCalendarSkeleton('#calendarWeekTbody > tr > td');
+        // generateCalendarSkeleton('#calendarWeekTbody > tr > td');
         return;
     }
 
     if (calendarSettings.day.isActive) {
-        generateTableSkeleton(`calendarTabPaneDay`, 14, 4);
+        // generateTableSkeleton(`calendarTabPaneDay`, 14, 4);
         return;
     }
 
     if (calendarSettings.doctor.isActive) {
-        generateCalendarSkeleton('.calendar-doctor__events');
+        // generateCalendarSkeleton('.calendar-doctor__events');
     }
 };
 
