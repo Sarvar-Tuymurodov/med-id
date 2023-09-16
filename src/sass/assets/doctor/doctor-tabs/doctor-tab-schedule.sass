@@ -1,0 +1,112 @@
+.doctor
+  &__schedule
+    display: flex
+
+    &--title
+      margin-bottom: 20px
+
+    &--left
+      flex: 0 0 calc(55% - 10px)
+      display: flex
+      flex-direction: column
+      margin-right: 10px
+
+    &--content
+      border-radius: $default-border-radius
+      padding: 20px
+      border: 1px solid $color-border-3
+      display: flex
+
+    &--times
+      display: flex
+      flex-direction: column
+      flex-grow: 1
+
+    &--event
+      display: flex
+      margin-left: -15px
+      width: 100%
+      margin-bottom: 20px
+
+      &-day
+        & .select2-selection__rendered
+          min-width: 220px
+          flex-grow: 1
+
+      &-start,
+      &-end
+        max-width: 180px
+
+      &-remove
+        background: $color-red-50
+        border-radius: $default-border-radius
+        box-shadow: none
+        color: $color-white
+        padding: 10px
+        border: none
+        height: 48px
+        width: 48px
+        transition: all 0.2s
+        display: flex
+        align-items: center
+        justify-content: center
+
+        & span
+          rotate: 45deg
+          color: $color-red
+          font-size: 28px
+
+      & > div
+        margin: 0 10px
+
+      & > button
+        margin-left: 15px
+
+    &--right
+      flex: 0 0 calc(45% - 10px)
+      display: flex
+      flex-direction: column
+      margin-left: 10px
+
+  &__absence
+    &--list
+      display: flex
+      flex-direction: column
+
+    &--box
+      display: flex
+      border-radius: $default-border-radius
+      border: 1px solid $color-border-3
+      padding: 10px 20px
+      margin-bottom: 10px
+
+    &--time-start,
+    &--time-end
+      display: flex
+      flex-direction: column
+
+    &--time-end
+      margin-left: 5px
+
+    &--date
+      font-family: $lato700
+
+    &--hour
+      font-size: 14px
+      white-space: nowrap
+      & span
+        font-family: $lato700
+        color: $color-primary-500
+        margin-right: 5px
+
+    &--day
+      width: 100%
+      display: flex
+      justify-content: space-between
+      font-size: 12px
+      color: $color-clay
+
+    &--comment
+      max-width: 250px
+      font-size: 14px
+      margin-left: 20px

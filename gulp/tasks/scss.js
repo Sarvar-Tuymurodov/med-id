@@ -1,6 +1,7 @@
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import rename from 'gulp-rename';
+import sourcemaps from "gulp-sourcemaps"
 
 import cleanCss from 'gulp-clean-css';
 import webpcss from 'gulp-webpcss';
@@ -15,6 +16,7 @@ export const scss = () => {
     return (
         app.gulp
             .src(app.path.src.scss, { soursecamps: app.isDev })
+            .pipe(sourcemaps.init())
             .pipe(
                 app.plugins.plumber(
                     app.plugins.notify.onError({
@@ -63,6 +65,7 @@ export const scss = () => {
             //         extname: '.min.css',
             //     }),
             // )
+            .pipe(sourcemaps.write())
             .pipe(app.gulp.dest(app.path.build.css))
             .pipe(app.plugins.browsersync.stream())
     );

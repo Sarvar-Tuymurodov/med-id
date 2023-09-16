@@ -1,0 +1,95 @@
+.client
+  &__question
+    display: flex
+
+    &--save
+      display: flex
+      justify-content: center
+
+      & button
+        padding: 15px 35px
+
+  &__status
+    display: flex
+    flex-direction: column
+
+    flex: 0 0 calc(50% - 10px)
+    margin-right: 10px
+
+    &-switcher
+      display: flex
+      max-width: 475px
+      margin-bottom: 20px
+
+      & label
+        min-width: 60px
+
+    &--text
+      margin-left: 40px
+
+      & h3
+        font-size: 16px
+        font-family: $lato600
+        color: $color-clay-3
+
+      & p
+        color: $color-clay
+        font-size: 16px
+
+  &__add--tag
+    max-width: 350px
+    width: 100%
+    margin-left: 10px
+
+  &__form--tag-group
+    max-width: 350px
+    display: flex
+
+    & button
+      margin-left: 15px
+
+  &__quiz
+    display: flex
+    margin-top: 50px
+
+    &--left,
+    &--right
+      flex: 0 0 50%
+      display: flex
+      flex-direction: column
+
+    &--title
+      font-family: $lato700
+      color: $color-clay-3
+      font-size: 16px
+
+    &--test
+      display: flex
+      flex-direction: column
+      margin-bottom: 30px
+
+      &-question
+        font-size: 16px
+        font-family: $lato700
+        color: $color-clay-3
+        margin-bottom: 8px
+
+      &-inline
+        display: flex
+
+        & .client__quiz--form-group
+          margin-bottom: 0
+
+        & .client__quiz--form-group:nth-child(2)
+          margin-left: 20px
+          margin-bottom: 0
+
+    &--form-group
+      display: flex
+      margin-bottom: 10px
+
+      & label
+        margin-left: 10px
+        font-size: 16px
+        font-family: $lato500
+        color: $color-clay-3

@@ -82,6 +82,10 @@ $(document).ready(function () {
         changeLang('uz');
     });
 
+    $(".lang-en").on("click", function () {
+        changeLang("en")
+    })
+
     // $('.lang-link-second').on('click', function () {
     //     $('.lang-menu-container').toggleClass('active');
     //     console.log($($(this).children('.lang-link-short')).text());

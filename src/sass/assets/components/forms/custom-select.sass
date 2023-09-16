@@ -1,0 +1,56 @@
+/*----------------TODO FROM SELECT ------------------------*/
+.select2-selection__rendered
+  background: #fff
+  border: 1px solid #ccc
+  font-weight: 500
+  font-size: 16px
+  color: $color-clay-3 !important
+  height: 48px
+  width: 100%
+  border-radius: 10px !important
+  padding-left: 40px !important
+  cursor: pointer
+
+span.select2.select2-container.select2-container--default.select2-container--open
+  .select2-selection__rendered
+    border: 2px solid $color-blue
+    height: 48px
+
+span.select2.select2-container.select2-container--default.select2-container--open
+  .select2-selection--single
+    border-radius: 10px
+    border: none
+
+.select2-container--default.select2-container--open .select2-dropdown
+  border-radius: 10px
+  overflow: hidden
+  margin-top: 5px
+
+.select2-selection__clear
+  top: 50% !important
+  left: 4px !important
+  translate: 0 -50% !important
+
+  &:hover
+    & span
+      background-color: $color-primary-500
+      color: $color-white
+  & span
+    color: $color-primary-500
+    transform: scaleX(-1)
+    width: 34px
+    height: 34px
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: 0.2s
+    border-radius: 6px
+    padding: 6px
+
+.form-select-label
+  top: 11px
+  font-size: 14px !important
+  background-color: $color-white
+  color: $color-clay
+  cursor: pointer
+  line-height: 15px

@@ -1,0 +1,132 @@
+.service
+  &__container
+    background-color: $color-white
+    padding: 30px 50px
+    border-radius: $default-border-radius
+    box-shadow: $default-box-shadow
+
+  &__header
+    position: relative
+
+    &::before
+      content: ''
+      position: absolute
+      width: 150%
+      left: -100px
+      height: 2px
+      background-color: $color-background-light
+      bottom: 0
+
+    &--tab-list
+      padding: 0
+      padding-top: 10px
+
+  &__body
+    display: flex
+
+  &__category
+    flex: 0 0 calc(35% - 15px)
+    margin-right: 15px
+    border-radius: $default-border-radius
+    border: 1px solid $color-border-3
+
+    &--head
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 20px
+      border-bottom: 1px solid $color-border-3
+
+      & button
+        width: 48px
+    &--title
+      font-size: 24px
+
+    &--body
+      display: flex
+      flex-direction: column
+
+    &--box
+      display: flex
+      justify-content: space-between
+      padding: 11px 20px
+      transition: all 0.2s
+      cursor: pointer
+
+      &.active
+        background-color: $color-background-light
+
+        .service__category--name,
+        .service__category--count
+          color: $color-primary-500
+
+    &--name
+      font-size: 18px
+
+    &--count
+      font-family: $lato900
+      font-size: 16px
+      color: $color-clay
+
+  &__list
+    flex: 0 0 calc(65% - 15px)
+    margin-left: 15px
+    border-radius: $default-border-radius
+    border: 1px solid $color-border-3
+
+    & .dataTables_filter
+      display: flex
+
+      & button
+        margin-left: 10px
+
+    & .dt__top
+      padding: 20px
+      margin-bottom: 0
+      border-bottom: 1px solid $color-background-light
+      max-height: 89px
+
+    & thead tr
+      & > th
+        border-radius: 0 !important
+        max-height: 48px
+
+    & .doctor__table
+      width: 100% !important
+
+    & .dataTables_scrollHeadInner
+      width: 100% !important
+      padding-right: 0 !important
+
+    & .dataTables_scrollBody
+      border-bottom: 0
+
+      &::-webkit-scrollbar
+        width: 6px
+
+      &::-webkit-scrollbar-thumb
+        background: #888
+
+    & .dt__body table
+      width: 100% !important
+      border-spacing: 0 !important
+      margin: 0 auto !important
+
+      & tbody > tr
+        filter: drop-shadow(0 0 0)
+        cursor: pointer
+
+        &:hover
+          & > td
+            border-bottom: 2px solid #5e90ed
+
+      & tbody > tr > td
+        border-radius: 0
+        box-shadow: none
+        border-bottom: 2px solid $color-border-3
+
+        &:first-child
+          border-right: none
+
+        & > div
+          font-size: 18px

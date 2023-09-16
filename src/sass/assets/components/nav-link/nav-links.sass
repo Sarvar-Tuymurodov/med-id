@@ -1,0 +1,16 @@
+.nav
+  &__item.active
+    position: relative
+
+    &::after
+      content: ''
+      position: absolute
+      width: 100%
+      height: 7px
+      border-radius: 20px 20px 0 0
+      background-color: $color-blue
+      left: 0
+      bottom: -15px
+
+    & .nav__link
+      color: $color-blue

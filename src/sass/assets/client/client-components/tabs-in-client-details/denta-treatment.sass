@@ -1,0 +1,176 @@
+.denta-treatment
+  &__action-btns
+    display: flex
+    width: 100%
+    margin-bottom: 20px
+
+  &__first
+    margin-right: 10px
+
+  &__add
+    margin-right: 10px
+
+  &__child-card
+    display: flex
+    align-items: center
+    margin-left: auto
+
+    & h4
+      margin-left: 10px
+      font-size: 16px
+
+  &__teeth-structure
+    border-radius: $default-border-radius
+    background-color: #93cbff
+    height: 510px
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+
+  &__detailed-view
+    position: absolute
+    right: 15px
+    top: 15px
+
+    display: flex
+    align-items: center
+
+    & input
+      scale: 1.2
+
+    & label
+      margin-left: 8px
+      font-size: 16px
+      color: inherit
+
+  &__teeth
+    &-list
+      display: flex
+      flex-direction: column
+
+      & h4
+        font-size: 24px
+        font-family: $lato700
+
+      & .teeth-table__item
+        width: 60px
+        height: 70px
+        background-color: $color-white
+        border-radius: $default-border-radius
+        margin: 0 3px
+
+      & .teeth-table__group
+        display: flex
+        // margin: 0 -3px;
+
+      & .teeth-table__content
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+        & span
+          text-align: center
+          font-size: 16px
+          font-family: $lato600
+
+    &-top
+      display: flex
+      margin-bottom: 10px
+
+      &--left
+        display: flex
+        flex-direction: column
+
+        & .teeth-table__item
+          border-bottom-left-radius: 30px
+          border-bottom-right-radius: 30px
+
+        & .teeth-table__content
+          transition-property: opacity, translate
+          transition-duration: 0.5s
+
+          &:nth-child(2)
+            transition-delay: 0.1s
+
+          &:nth-child(3)
+            transition-delay: 0.2s
+
+          &.hide
+            translate: 0 -80px
+            opacity: 0
+
+      &--right
+        display: flex
+        flex-direction: column
+
+        &-title
+          margin-left: auto
+          transition: all 0.5s
+
+        & .teeth-table__item
+          border-bottom-left-radius: 30px
+          border-bottom-right-radius: 30px
+
+        & .teeth-table__content
+          transition-property: opacity, translate
+          transition-duration: 0.5s
+
+          &.hide
+            translate: 0 -80px
+            opacity: 0
+
+          &:nth-last-child(2)
+            transition-delay: 0.1s
+
+          &:nth-last-child(3)
+            transition-delay: 0.2s
+
+    &-bottom
+      display: flex
+
+      &--left
+        display: flex
+        flex-direction: column
+
+        & .teeth-table__item
+          border-top-left-radius: 30px
+          border-top-right-radius: 30px
+
+        & .teeth-table__content
+          transition-property: opacity, translate
+          transition-duration: 0.5s
+
+          &.hide
+            translate: 0 80px
+            opacity: 0
+          &:nth-child(2)
+            transition-delay: 0.1s
+
+          &:nth-child(3)
+            transition-delay: 0.2s
+
+      &--right
+        display: flex
+        flex-direction: column
+
+        &-title
+          margin-left: auto
+
+        & .teeth-table__item
+          border-top-left-radius: 30px
+          border-top-right-radius: 30px
+
+        & .teeth-table__content
+          transition-property: opacity, translate
+          transition-duration: 0.5s
+
+          &.hide
+            translate: 0 80px
+            opacity: 0
+
+          &:nth-last-child(2)
+            transition-delay: 0.1s
+
+          &:nth-last-child(3)
+            transition-delay: 0.2s

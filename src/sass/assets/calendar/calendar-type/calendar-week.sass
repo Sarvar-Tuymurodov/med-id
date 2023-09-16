@@ -1,0 +1,144 @@
+.calendar-block
+  &__week
+    width: 100%
+    display: none
+
+    &.active
+      display: inline-block
+
+  .calendar-week
+    &__table
+      width: 100%
+
+    &__thead
+      border-radius: 10px
+
+      & tr
+        display: flex
+        width: 100%
+        border-radius: 10px
+        overflow: hidden
+
+        & th
+          display: flex
+          justify-content: center
+          flex-grow: 1
+          padding: 15px 0
+
+    &__tbody
+      & tr
+        display: flex
+        width: 100%
+
+        &:first-child
+          margin-top: -3px
+
+        & td
+          font-family: 'LatoWebBold'
+          background-color: $color-white
+          // box-shadow: $default-box-shadow;
+          border: 1px solid $color-border-3
+          border-radius: 10px
+          transition: all 0.2s
+          margin: 2px
+          height: 48px
+          max-width: 128px
+          width: 100%
+          padding: 4px 8px
+          cursor: pointer
+
+          display: flex
+          flex-grow: 1
+          align-items: center
+          justify-content: center
+          user-select: none
+
+          &:first-child
+            margin-left: 0
+            border: 1px solid $color-border-3
+            background-color: $color-background-2
+            cursor: default
+            max-width: 135px
+            width: 100%
+            font-size: 24px
+            display: flex
+
+            & .calendar-week__hour
+              translate: 0 2px
+
+            &:hover
+              border: 1px solid $color-border-3
+
+          &:last-child
+            margin-right: 0
+
+          &:hover
+            border: 1px solid $color-blue
+
+    &__hour
+      display: flex
+      justify-content: space-around
+      width: 100%
+
+      &.cell
+        justify-content: start
+
+      &--left
+        display: none
+        flex-direction: column
+        align-items: center
+        margin-right: 5px
+        margin-left: 15px
+
+        &.show
+          display: flex
+
+      &--right
+        display: flex
+        margin-left: 10px
+
+    &__events
+      &--count
+        font-size: 24px
+        line-height: 28px
+
+      &--text
+        font-size: 10px
+
+    &__actions
+      display: flex
+      max-width: 40px
+      flex-wrap: wrap
+      align-items: center
+      justify-content: space-around
+
+      & span
+        font-size: 15px
+
+      & .medid-icon-continius
+        display: none
+        color: $color-dark-green
+
+        &.active
+          display: inline-block
+
+      & .medid-icon-active-notification
+        display: none
+        color: $color-primary-500
+
+        &.active
+          display: inline-block
+
+      & .medid-icon-urgent
+        display: none
+        color: $color-yellow-500
+
+        &.active
+          display: inline-block
+
+      & .medid-icon-Important
+        display: none
+        color: $color-red
+
+        &.active
+          display: inline-block

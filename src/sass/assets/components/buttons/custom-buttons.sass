@@ -1,0 +1,123 @@
+.btn-default
+  background: #ffffff
+  color: $color-clay-3
+  border-radius: 10px
+  padding: 10px
+  transition: all 0.2s
+  border: 1px solid $color-border-2
+  box-shadow: none
+  height: 48px
+
+  display: flex
+  align-items: center
+  justify-content: center
+  filter: drop-shadow($default-box-shadow)
+
+.btn-default:hover
+  background: $color-border-2
+  box-shadow: none
+  transform: translateY(0)
+  /*color: #FFFFFF !important;*/
+
+.btn-blue
+  background: #4361ee
+  border-radius: 10px
+  box-shadow: none
+  color: #ffffff
+  padding: 10px
+  border: none
+  height: 48px
+  transition: all 0.2s
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+.btn-blue:hover
+  background: $color-blue-hover
+  box-shadow: none
+
+/* --------------- SQUARE BTN ---------------*/
+.square-btn
+  width: 48px
+  height: 48px
+
+/* ---------------TODO REMOVE BTN -----------*/
+.remove-btn
+  padding: 10px
+  border-radius: 10px
+  transition: all 0.1s
+  position: absolute
+  top: 50%
+  translate: 0 -50%
+  right: 10px
+  display: none
+  box-shadow: -25px 0px 26px 25px rgba(255, 255, 255, 1)
+  z-index: 3
+
+.remove-btn svg
+  width: 18px
+  height: 18px
+
+.remove-btn path
+  stroke: $color-red
+
+.remove-btn:hover
+  background: $color-red-100
+
+/* ---------------TODO EDIT BTN -----------*/
+.edit-btn
+  padding: 10px
+  border-radius: 10px
+  transition: all 0.1s
+  position: absolute
+  top: 50%
+  translate: 0 -50%
+  right: 50px
+  display: none
+  box-shadow: -25px 0px 26px 25px rgba(255, 255, 255, 1)
+  z-index: 5
+
+.edit-btn svg
+  width: 18px
+  height: 18px
+
+.edit-btn path
+  stroke: $color-blue
+
+.edit-btn:hover
+  background: #d2e2f9
+
+/*--------------- BTN CLOSEE -----------*/
+.btn-close
+  background-color: $color-background-2
+  border-radius: 10px
+  width: 40px
+  height: 40px
+  transition: all 0.2s
+  border: none
+  padding: 5px
+
+  display: flex
+  align-items: center
+  justify-content: center
+
+  & span
+    rotate: 45deg
+
+  &:hover
+    background-color: $color-text
+
+/*-------------- BTN bordered -----------------------*/
+.btn-bordered
+  border: 1px solid $color-border-3
+  padding: 15px 30px
+  border-radius: $default-border-radius
+  background-color: $color-white
+  display: flex
+  align-items: center
+  font-size: 16px
+  justify-content: center
+
+  & span
+    margin-right: 7px
